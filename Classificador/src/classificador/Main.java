@@ -18,11 +18,11 @@ public class Main {
      * @param args the command line arguments
      */
     
-    public static String getParametro (String arquivo) {
-         //metodo que le do arquivo qual parametro utilizar para a classificação
+    public static String getParameter (String fileName) {
+         //metodo que le do fileName qual parametro utilizar para a classificação
         try {
             String classe = null;
-            BufferedReader in = new BufferedReader(new FileReader(arquivo));
+            BufferedReader in = new BufferedReader(new FileReader(fileName));
             while (in.ready()) {
                 classe = in.readLine();
             }
@@ -40,16 +40,16 @@ public class Main {
             String instanceFileName = getOption("i", args);
             String classFileName = getOption("c", args);
 
-            BaseDados dados = new BaseDados(trainingFileName);
+            DataBase dataBase = new DataBase(trainingFileName);
 
-            String cliente = getParametro(classFileName);
-            String classe = getParametro(instanceFileName);
+            String register = getParameter(classFileName);
+            String classe = getParameter(instanceFileName);
             
-            Perfil client = new Perfil (cliente+",-"); /* gambiarra! A entrada nao possui classe,
-                                                    logo causa erro na criaçao do objeto Perfil!
+            Example client = new Example (register + ",-"); /* gambiarra! A entrada nao possui classe,
+                                                    logo causa erro na criaçao do objeto Example!
                                                    */      
             client.toString();
-            System.out.println(dados.toString());
+            System.out.println(dataBase.toString());
 
         } catch (Exception e) {
             System.out.println("O seguinte erro ocorreu: " + e.getMessage());
