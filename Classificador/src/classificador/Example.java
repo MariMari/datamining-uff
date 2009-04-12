@@ -20,7 +20,6 @@ public class Example {
     private String classe;
 
     Example(String lineRead) {
-        try {
             String [] attributes = lineRead.split(",");
             
             duracao_emp = Integer.parseInt(attributes[1]);
@@ -31,28 +30,25 @@ public class Example {
             economias = attributes[4];
             est_pessoal = attributes[5];
             classe = attributes[6];
-        } catch (Exception E) {
-            System.out.println("Erro da entrada de dados.");
-        }
+    }
+    
+    public int getDuracao() {
+        return duracao_emp;
+    }
+    
+    public int getValor() {
+        return valor;
     }
 
     public String getSaldo() {
         return saldo;
     }
 
-    public int getDuracao() {
-        return duracao_emp;
-    }
-
     public String getHistorico() {
         return hist_credito;
     }
 
-    public int getValor() {
-        return valor;
-    }
-
-    public String getEconominas() {
+    public String getEconomias() {
         return economias;
     }
 
@@ -62,6 +58,34 @@ public class Example {
 
     public String getClasse() {
         return classe;
+    }
+    
+    public void setDuracao(int duracao) {
+        duracao_emp = duracao;
+    }
+    
+    public void setValor(int valor) {
+        this.valor = valor;
+    }
+
+    public void setSaldo(String saldo) {
+        this.saldo = saldo;
+    }
+
+    public void setHistorico(String historico) {
+        hist_credito = historico;
+    }
+
+    public void setEconomias(String economias) {
+        this.economias = economias;
+    }
+
+    public void setEstPessoal(String estPessoal) {
+        this.est_pessoal = estPessoal;
+    }
+
+    public void setClasse(String classe) {
+        this.classe = classe;
     }
     
     @Override

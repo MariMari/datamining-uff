@@ -17,42 +17,50 @@ public class DataBase {
     private ArrayList<Example> data;
    
     
-    DataBase(String fileName) {
-        data = new ArrayList();
-        this.createDataBase(fileName);
+    public DataBase(String fileName) throws Exception {
+        File file = new File(fileName);
+        this.createDataBase(file);
+    }
+
+    public DataBase(File file) throws Exception {
+        this.createDataBase(file);
     }
        
-    public void setIn (Example in) {
-        data.add(in);
+    public void addExample (Example example) {
+        data.add(example);
     }
     
-    public Example getIn (int index) {
+    public Example getExample (int index) {
         return (Example) data.get(index);
     }
     
-     public void createDataBase (String fileName) {
-        //copia e trata as entradas da base de data
+    public void createDataBase (File file) throws Exception {
+    //copia e trata as entradas da base de data
         try {
-            BufferedReader in = new BufferedReader(new FileReader(fileName));
+            BufferedReader in = new BufferedReader(new FileReader(file));
             String lineRead = null;
+            
             while (in.ready()) {
                 lineRead = in.readLine();
-                Example aux = new Example(lineRead);
-                this.setIn(aux);                
+                Example example = new Example(lineRead);
+                this.addExample(example);
             }
+            
             in.close();
+        } catch (FileNotFoundException e) {
+            throw new Exception("O arquivo nao pode ser encontrado");
         } catch (IOException e) {
-            System.out.println("Erro ao ler base de dados!");
+            throw new Exception("A leitura do arquivo nao pode ser realizada");
         }
     }
-    
-   public String toString () {
-       String out = null;
-       for (int i = 0; i < data.size(); i++) {
-           out = out + this.getIn(i).toString() + "\n";
-       }
-       return out;
-   }
-    
+   
+    @Override
+    public String toString () {
+        String out = null;
+        for (int i = 0; i < data.size(); i++) {
+            out = out + this.getExample(i).toString() + "\n";
+        }
+        return out;
+    }
 
 }
