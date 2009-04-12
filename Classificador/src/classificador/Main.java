@@ -5,9 +5,11 @@
 
 package classificador;
 import java.io.*;
+import static classificador.Utils.*;
 /**
  *
  * @author MariMari
+ * @author igorg
  * 
  */
 public class Main {
@@ -33,17 +35,25 @@ public class Main {
     }
     
     public static void main(String[] args) {
-        
-       BaseDados dados = new BaseDados("C:/Users/MariMari/Desktop/desafio1/base.txt");
-        
-       String classe = getParametro("C:/Users/MariMari/Desktop/desafio1/classe.txt");
-       String cliente = getParametro("C:/Users/MariMari/Desktop/desafio1/reg.txt");
-       Perfil client = new Perfil (cliente+",-"); /* gambiarra! A entrada nao possui classe,
+        try {
+            String trainingFileName = getOption("t", args);
+            String instanceFileName = getOption("i", args);
+            String classFileName = getOption("c", args);
+
+            BaseDados dados = new BaseDados(trainingFileName);
+
+            String cliente = getParametro(classFileName);
+            String classe = getParametro(instanceFileName);
+            
+            Perfil client = new Perfil (cliente+",-"); /* gambiarra! A entrada nao possui classe,
                                                     logo causa erro na criaçao do objeto Perfil!
                                                    */      
-       client.toString();
-       System.out.println(dados.toString());
-        
+            client.toString();
+            System.out.println(dados.toString());
+
+        } catch (Exception e) {
+            System.out.println("O seguinte erro ocorreu: " + e.getMessage());
+        }        
     }
 
 }
