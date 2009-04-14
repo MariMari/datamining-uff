@@ -1,0 +1,500 @@
+<0,6,'critical/other existing credit',1169,'no known savings','male single',good
+0<=X<200,48,'existing paid',5951,<100,'female div/dep/mar',bad
+'no checking',12,'critical/other existing credit',2096,<100,'male single',good
+<0,42,'existing paid',7882,<100,'male single',good
+<0,24,'delayed previously',4870,<100,'male single',bad
+'no checking',36,'existing paid',9055,'no known savings','male single',good
+'no checking',24,'existing paid',2835,500<=X<1000,'male single',good
+0<=X<200,36,'existing paid',6948,<100,'male single',good
+'no checking',12,'existing paid',3059,>=1000,'male div/sep',good
+<0,30,'no credits/all paid',8072,'no known savings','male single',good
+0<=X<200,24,'existing paid',12579,<100,'female div/dep/mar',bad
+'no checking',24,'existing paid',3430,500<=X<1000,'male single',good
+'no checking',9,'critical/other existing credit',2134,<100,'male single',good
+<0,6,'existing paid',2647,500<=X<1000,'male single',good
+<0,10,'critical/other existing credit',2241,<100,'male single',good
+0<=X<200,12,'critical/other existing credit',1804,100<=X<500,'male single',good
+'no checking',10,'critical/other existing credit',2069,'no known savings','male mar/wid',good
+<0,6,'existing paid',1374,<100,'male single',good
+'no checking',6,'no credits/all paid',426,<100,'male mar/wid',good
+>=200,12,'all paid',409,>=1000,'female div/dep/mar',good
+0<=X<200,7,'existing paid',2415,<100,'male single',good
+<0,60,'delayed previously',6836,<100,'male single',bad
+0<=X<200,18,'existing paid',1913,>=1000,'male mar/wid',good
+<0,24,'existing paid',4020,<100,'male single',good
+0<=X<200,18,'existing paid',5866,100<=X<500,'male single',good
+'no checking',12,'critical/other existing credit',1264,'no known savings','male single',good
+>=200,12,'existing paid',1474,<100,'female div/dep/mar',good
+0<=X<200,45,'critical/other existing credit',4746,<100,'male single',bad
+'no checking',48,'critical/other existing credit',6110,<100,'male single',good
+>=200,18,'existing paid',2100,<100,'male single',bad
+>=200,10,'existing paid',1225,<100,'male single',good
+0<=X<200,9,'existing paid',458,<100,'male single',good
+'no checking',30,'existing paid',2333,500<=X<1000,'male single',good
+0<=X<200,12,'existing paid',1158,500<=X<1000,'male div/sep',good
+0<=X<200,18,'delayed previously',6204,<100,'male single',good
+<0,30,'critical/other existing credit',6187,100<=X<500,'male mar/wid',good
+<0,48,'critical/other existing credit',6143,<100,'female div/dep/mar',bad
+'no checking',11,'critical/other existing credit',1393,<100,'female div/dep/mar',good
+'no checking',36,'existing paid',2299,500<=X<1000,'male single',good
+<0,6,'existing paid',1352,500<=X<1000,'female div/dep/mar',good
+'no checking',11,'critical/other existing credit',7228,<100,'male single',good
+'no checking',12,'existing paid',2073,100<=X<500,'female div/dep/mar',good
+0<=X<200,24,'delayed previously',2333,'no known savings','male single',good
+0<=X<200,27,'delayed previously',5965,<100,'male single',good
+'no checking',12,'existing paid',1262,<100,'male single',good
+'no checking',18,'existing paid',3378,'no known savings','male single',good
+0<=X<200,36,'delayed previously',2225,<100,'male single',bad
+'no checking',6,'all paid',783,'no known savings','male single',good
+0<=X<200,12,'existing paid',6468,'no known savings','male single',bad
+'no checking',36,'critical/other existing credit',9566,<100,'female div/dep/mar',good
+>=200,18,'existing paid',1961,<100,'female div/dep/mar',good
+<0,36,'critical/other existing credit',6229,<100,'female div/dep/mar',bad
+0<=X<200,9,'existing paid',1391,<100,'male mar/wid',good
+0<=X<200,15,'critical/other existing credit',1537,'no known savings','male single',good
+0<=X<200,36,'no credits/all paid',1953,<100,'male single',bad
+0<=X<200,48,'no credits/all paid',14421,<100,'male single',bad
+'no checking',24,'existing paid',3181,<100,'female div/dep/mar',good
+'no checking',27,'existing paid',5190,'no known savings','male single',good
+'no checking',12,'existing paid',2171,<100,'female div/dep/mar',good
+0<=X<200,12,'existing paid',1007,>=1000,'male mar/wid',good
+'no checking',36,'existing paid',1819,<100,'male single',bad
+'no checking',36,'existing paid',2394,'no known savings','female div/dep/mar',good
+'no checking',36,'existing paid',8133,<100,'female div/dep/mar',good
+'no checking',7,'critical/other existing credit',730,'no known savings','male single',good
+<0,8,'critical/other existing credit',1164,<100,'male single',good
+0<=X<200,42,'critical/other existing credit',5954,<100,'female div/dep/mar',good
+<0,36,'existing paid',1977,'no known savings','male single',bad
+<0,12,'critical/other existing credit',1526,<100,'male single',good
+<0,42,'existing paid',3965,<100,'male single',bad
+0<=X<200,11,'delayed previously',4771,<100,'male single',good
+'no checking',54,'no credits/all paid',9436,'no known savings','male single',good
+0<=X<200,30,'existing paid',3832,<100,'male mar/wid',good
+'no checking',24,'existing paid',5943,'no known savings','female div/dep/mar',bad
+'no checking',15,'existing paid',1213,500<=X<1000,'male single',good
+'no checking',18,'existing paid',1568,100<=X<500,'female div/dep/mar',good
+<0,24,'existing paid',1755,<100,'female div/dep/mar',good
+<0,10,'existing paid',2315,<100,'male single',good
+'no checking',12,'critical/other existing credit',1412,<100,'female div/dep/mar',good
+0<=X<200,18,'critical/other existing credit',1295,<100,'female div/dep/mar',good
+0<=X<200,36,'existing paid',12612,100<=X<500,'male single',bad
+<0,18,'existing paid',2249,100<=X<500,'male single',good
+<0,12,'no credits/all paid',1108,<100,'male single',bad
+'no checking',12,'critical/other existing credit',618,<100,'male single',good
+<0,12,'critical/other existing credit',1409,<100,'male single',good
+'no checking',12,'critical/other existing credit',797,'no known savings','female div/dep/mar',bad
+>=200,24,'critical/other existing credit',3617,'no known savings','male single',good
+0<=X<200,12,'existing paid',1318,>=1000,'male single',good
+0<=X<200,54,'no credits/all paid',15945,<100,'male single',bad
+'no checking',12,'critical/other existing credit',2012,'no known savings','female div/dep/mar',good
+0<=X<200,18,'existing paid',2622,100<=X<500,'male single',good
+0<=X<200,36,'critical/other existing credit',2337,<100,'male single',good
+0<=X<200,20,'delayed previously',7057,'no known savings','male single',good
+'no checking',24,'existing paid',1469,100<=X<500,'male mar/wid',good
+0<=X<200,36,'existing paid',2323,<100,'male single',good
+'no checking',6,'delayed previously',932,<100,'female div/dep/mar',good
+0<=X<200,9,'critical/other existing credit',1919,<100,'male single',good
+'no checking',12,'existing paid',2445,'no known savings','male mar/wid',good
+0<=X<200,24,'critical/other existing credit',11938,<100,'male single',bad
+'no checking',18,'all paid',6458,<100,'male single',bad
+0<=X<200,12,'existing paid',6078,<100,'male single',good
+<0,24,'existing paid',7721,'no known savings','female div/dep/mar',good
+0<=X<200,14,'existing paid',1410,500<=X<1000,'male mar/wid',good
+0<=X<200,6,'delayed previously',1449,100<=X<500,'male div/sep',good
+>=200,15,'existing paid',392,<100,'female div/dep/mar',good
+0<=X<200,18,'existing paid',6260,<100,'male single',good
+'no checking',36,'critical/other existing credit',7855,<100,'female div/dep/mar',bad
+'no checking',24,'critical/other existing credit',3868,<100,'female div/dep/mar',good
+'no checking',12,'existing paid',1768,<100,'male single',good
+>=200,10,'critical/other existing credit',781,<100,'male single',good
+0<=X<200,18,'existing paid',1924,'no known savings','female div/dep/mar',bad
+<0,12,'critical/other existing credit',2121,<100,'male single',good
+<0,12,'existing paid',701,<100,'male mar/wid',good
+0<=X<200,12,'existing paid',639,<100,'male single',bad
+0<=X<200,12,'critical/other existing credit',1860,<100,'male single',good
+0<=X<200,24,'critical/other existing credit',7758,>=1000,'female div/dep/mar',good
+0<=X<200,24,'delayed previously',6967,100<=X<500,'male single',good
+<0,12,'existing paid',1282,<100,'female div/dep/mar',bad
+<0,9,'critical/other existing credit',1288,100<=X<500,'male single',good
+<0,12,'all paid',339,<100,'male mar/wid',good
+0<=X<200,24,'existing paid',3512,100<=X<500,'male single',good
+'no checking',6,'critical/other existing credit',1898,'no known savings','male single',good
+'no checking',24,'critical/other existing credit',2872,100<=X<500,'male single',good
+'no checking',18,'critical/other existing credit',1055,<100,'female div/dep/mar',good
+'no checking',15,'existing paid',1262,500<=X<1000,'male single',good
+0<=X<200,10,'existing paid',7308,<100,'male single',good
+'no checking',36,'existing paid',909,500<=X<1000,'male single',good
+'no checking',6,'existing paid',2978,500<=X<1000,'male single',good
+'no checking',24,'critical/other existing credit',3777,>=1000,'male single',good
+0<=X<200,9,'critical/other existing credit',1501,<100,'female div/dep/mar',bad
+'no checking',6,'critical/other existing credit',1382,<100,'female div/dep/mar',good
+0<=X<200,12,'existing paid',951,100<=X<500,'female div/dep/mar',bad
+0<=X<200,24,'existing paid',2760,'no known savings','male single',good
+0<=X<200,18,'delayed previously',4297,<100,'male div/sep',bad
+'no checking',9,'critical/other existing credit',936,500<=X<1000,'male single',good
+<0,12,'existing paid',1168,<100,'male mar/wid',good
+'no checking',27,'delayed previously',5117,<100,'male single',good
+<0,12,'existing paid',902,<100,'male mar/wid',bad
+'no checking',12,'critical/other existing credit',1495,<100,'male single',good
+<0,30,'critical/other existing credit',10623,<100,'male single',good
+'no checking',12,'critical/other existing credit',1935,<100,'male single',good
+0<=X<200,12,'critical/other existing credit',1424,<100,'male single',good
+'no checking',24,'existing paid',1258,<100,'male single',good
+'no checking',12,'critical/other existing credit',717,<100,'male single',good
+'no checking',6,'no credits/all paid',1204,100<=X<500,'male single',good
+>=200,24,'existing paid',1925,<100,'male single',good
+'no checking',18,'existing paid',433,<100,'female div/dep/mar',bad
+<0,6,'critical/other existing credit',666,>=1000,'female div/dep/mar',good
+'no checking',15,'existing paid',3812,100<=X<500,'female div/dep/mar',good
+'no checking',11,'critical/other existing credit',1154,100<=X<500,'female div/dep/mar',good
+<0,12,'existing paid',1657,<100,'male single',good
+<0,24,'existing paid',1603,<100,'female div/dep/mar',good
+'no checking',18,'existing paid',2662,'no known savings','male single',good
+'no checking',12,'critical/other existing credit',1402,500<=X<1000,'female div/dep/mar',good
+0<=X<200,48,'all paid',12169,'no known savings','male single',good
+0<=X<200,48,'existing paid',3060,<100,'male single',bad
+<0,30,'existing paid',11998,<100,'male div/sep',bad
+'no checking',9,'existing paid',2697,<100,'male single',good
+'no checking',18,'critical/other existing credit',2404,<100,'female div/dep/mar',good
+<0,12,'existing paid',1262,'no known savings','male div/sep',good
+'no checking',6,'existing paid',4611,<100,'female div/dep/mar',bad
+'no checking',24,'existing paid',1901,100<=X<500,'male single',good
+'no checking',15,'critical/other existing credit',3368,>=1000,'male single',good
+'no checking',12,'existing paid',1574,<100,'male single',good
+>=200,18,'all paid',1445,'no known savings','male single',good
+'no checking',15,'critical/other existing credit',1520,'no known savings','male single',good
+0<=X<200,24,'critical/other existing credit',3878,100<=X<500,'male div/sep',good
+<0,47,'existing paid',10722,<100,'female div/dep/mar',good
+<0,48,'existing paid',4788,<100,'male single',good
+0<=X<200,48,'delayed previously',7582,100<=X<500,'male single',good
+0<=X<200,12,'existing paid',1092,<100,'female div/dep/mar',good
+<0,24,'delayed previously',1024,<100,'male mar/wid',bad
+'no checking',12,'existing paid',1076,<100,'male mar/wid',good
+0<=X<200,36,'existing paid',9398,<100,'male mar/wid',bad
+'no checking',18,'critical/other existing credit',1028,<100,'female div/dep/mar',good
+<0,8,'critical/other existing credit',3398,<100,'male single',good
+'no checking',12,'critical/other existing credit',5801,'no known savings','male single',good
+'no checking',24,'existing paid',1525,>=1000,'female div/dep/mar',good
+>=200,36,'existing paid',4473,<100,'male single',good
+0<=X<200,6,'existing paid',1068,<100,'male single',good
+<0,24,'critical/other existing credit',6615,<100,'male single',good
+'no checking',18,'critical/other existing credit',1864,100<=X<500,'female div/dep/mar',bad
+'no checking',15,'critical/other existing credit',1459,<100,'female div/dep/mar',good
+0<=X<200,13,'critical/other existing credit',882,<100,'male single',good
+0<=X<200,24,'existing paid',3758,500<=X<1000,'female div/dep/mar',good
+'no checking',6,'delayed previously',1743,100<=X<500,'male single',good
+0<=X<200,9,'critical/other existing credit',1136,>=1000,'male single',bad
+'no checking',9,'existing paid',1236,<100,'female div/dep/mar',good
+0<=X<200,9,'existing paid',959,<100,'female div/dep/mar',bad
+'no checking',18,'critical/other existing credit',3229,'no known savings','male single',good
+<0,12,'no credits/all paid',6199,<100,'male single',bad
+'no checking',10,'existing paid',727,500<=X<1000,'male single',good
+0<=X<200,24,'existing paid',1246,<100,'male single',bad
+'no checking',12,'critical/other existing credit',2331,'no known savings','male single',good
+'no checking',36,'delayed previously',4463,<100,'male single',bad
+'no checking',12,'existing paid',776,<100,'male mar/wid',good
+<0,30,'existing paid',2406,<100,'female div/dep/mar',bad
+0<=X<200,18,'existing paid',1239,'no known savings','male single',good
+>=200,12,'existing paid',3399,'no known savings','male single',good
+>=200,12,'delayed previously',2247,<100,'female div/dep/mar',good
+'no checking',6,'existing paid',1766,<100,'male mar/wid',good
+<0,18,'existing paid',2473,<100,'male single',bad
+'no checking',12,'existing paid',1542,<100,'male single',good
+'no checking',18,'critical/other existing credit',3850,<100,'male single',good
+<0,18,'existing paid',3650,<100,'female div/dep/mar',good
+<0,36,'existing paid',3446,<100,'male single',bad
+0<=X<200,18,'existing paid',3001,<100,'female div/dep/mar',good
+'no checking',36,'existing paid',3079,'no known savings','male single',good
+'no checking',18,'critical/other existing credit',6070,<100,'male single',good
+'no checking',10,'critical/other existing credit',2146,<100,'female div/dep/mar',good
+'no checking',60,'critical/other existing credit',13756,'no known savings','male single',good
+0<=X<200,60,'all paid',14782,100<=X<500,'female div/dep/mar',bad
+<0,48,'all paid',7685,<100,'female div/dep/mar',bad
+<0,36,'existing paid',3249,<100,'male single',good
+<0,6,'critical/other existing credit',1957,<100,'female div/dep/mar',good
+'no checking',9,'critical/other existing credit',2406,<100,'male single',good
+0<=X<200,39,'delayed previously',11760,100<=X<500,'male single',good
+<0,12,'existing paid',2578,<100,'female div/dep/mar',good
+<0,36,'critical/other existing credit',2348,<100,'male mar/wid',good
+0<=X<200,12,'existing paid',1223,<100,'male div/sep',bad
+'no checking',24,'critical/other existing credit',1516,>=1000,'female div/dep/mar',good
+'no checking',18,'existing paid',1473,<100,'male mar/wid',good
+0<=X<200,18,'critical/other existing credit',1887,'no known savings','male mar/wid',good
+'no checking',24,'delayed previously',8648,<100,'male single',bad
+'no checking',14,'delayed previously',802,<100,'male single',good
+0<=X<200,18,'delayed previously',2899,'no known savings','male single',good
+0<=X<200,24,'existing paid',2039,<100,'male mar/wid',bad
+'no checking',24,'critical/other existing credit',2197,'no known savings','male single',good
+<0,15,'existing paid',1053,<100,'male mar/wid',good
+'no checking',24,'existing paid',3235,500<=X<1000,'male div/sep',good
+>=200,12,'critical/other existing credit',939,500<=X<1000,'male mar/wid',bad
+0<=X<200,24,'existing paid',1967,<100,'female div/dep/mar',good
+'no checking',33,'critical/other existing credit',7253,<100,'male single',good
+'no checking',12,'critical/other existing credit',2292,<100,'male single',bad
+'no checking',10,'existing paid',1597,500<=X<1000,'male single',good
+<0,24,'existing paid',1381,'no known savings','female div/dep/mar',bad
+'no checking',36,'critical/other existing credit',5842,<100,'male single',good
+<0,12,'existing paid',2579,<100,'male single',bad
+<0,18,'delayed previously',8471,'no known savings','female div/dep/mar',good
+'no checking',21,'existing paid',2782,500<=X<1000,'female div/dep/mar',good
+0<=X<200,18,'existing paid',1042,'no known savings','female div/dep/mar',bad
+'no checking',15,'existing paid',3186,>=1000,'female div/dep/mar',good
+<0,12,'existing paid',1620,<100,'female div/dep/mar',good
+'no checking',24,'existing paid',2679,<100,'female div/dep/mar',good
+<0,11,'critical/other existing credit',3905,<100,'male single',good
+<0,12,'existing paid',3386,<100,'male single',bad
+<0,6,'existing paid',343,<100,'female div/dep/mar',good
+'no checking',18,'existing paid',4594,<100,'male single',good
+<0,36,'existing paid',3620,<100,'male single',good
+<0,15,'existing paid',1721,<100,'male single',good
+0<=X<200,12,'existing paid',3017,<100,'female div/dep/mar',good
+0<=X<200,12,'existing paid',754,'no known savings','male single',good
+'no checking',18,'existing paid',1950,<100,'male single',good
+<0,24,'existing paid',2924,<100,'male single',good
+<0,24,'delayed previously',1659,<100,'female div/dep/mar',bad
+'no checking',48,'delayed previously',7238,'no known savings','male single',good
+'no checking',33,'delayed previously',2764,<100,'female div/dep/mar',good
+'no checking',24,'delayed previously',4679,<100,'male single',good
+0<=X<200,24,'existing paid',3092,100<=X<500,'male mar/wid',bad
+<0,6,'existing paid',448,<100,'female div/dep/mar',bad
+'no checking',10,'existing paid',1418,100<=X<500,'male single',good
+'no checking',6,'existing paid',3518,<100,'male single',good
+'no checking',12,'critical/other existing credit',1934,<100,'male single',good
+0<=X<200,27,'no credits/all paid',8318,<100,'female div/dep/mar',bad
+'no checking',6,'critical/other existing credit',1237,100<=X<500,'female div/dep/mar',good
+0<=X<200,6,'existing paid',368,'no known savings','male single',good
+<0,12,'critical/other existing credit',2122,<100,'male single',good
+<0,24,'existing paid',2996,'no known savings','male mar/wid',bad
+0<=X<200,36,'existing paid',9034,100<=X<500,'male single',bad
+'no checking',24,'critical/other existing credit',1585,<100,'male single',good
+0<=X<200,18,'existing paid',1301,<100,'male mar/wid',good
+>=200,6,'critical/other existing credit',1323,100<=X<500,'male div/sep',good
+<0,24,'existing paid',3123,<100,'female div/dep/mar',bad
+<0,36,'existing paid',5493,<100,'male single',good
+>=200,9,'existing paid',1126,100<=X<500,'male div/sep',good
+0<=X<200,24,'critical/other existing credit',1216,100<=X<500,'male single',bad
+<0,24,'existing paid',1207,<100,'female div/dep/mar',bad
+'no checking',10,'existing paid',1309,'no known savings','male single',bad
+>=200,15,'critical/other existing credit',2360,500<=X<1000,'male single',good
+0<=X<200,15,'existing paid',2631,100<=X<500,'female div/dep/mar',bad
+'no checking',12,'delayed previously',1503,<100,'male mar/wid',good
+'no checking',24,'existing paid',1311,100<=X<500,'male mar/wid',good
+'no checking',24,'existing paid',3105,'no known savings','male single',good
+>=200,21,'critical/other existing credit',2319,<100,'male div/sep',bad
+<0,6,'existing paid',1374,'no known savings','female div/dep/mar',good
+0<=X<200,18,'critical/other existing credit',3612,<100,'female div/dep/mar',good
+<0,48,'existing paid',7763,<100,'male single',bad
+>=200,18,'existing paid',3049,<100,'female div/dep/mar',good
+0<=X<200,12,'existing paid',1534,<100,'male mar/wid',bad
+'no checking',24,'delayed previously',2032,<100,'male single',good
+<0,30,'existing paid',6350,'no known savings','male single',bad
+>=200,18,'existing paid',2864,<100,'male single',bad
+'no checking',12,'critical/other existing credit',1255,<100,'male single',good
+<0,24,'delayed previously',1333,<100,'male single',bad
+'no checking',24,'critical/other existing credit',2022,<100,'female div/dep/mar',good
+'no checking',24,'existing paid',1552,<100,'male single',good
+<0,12,'all paid',626,<100,'female div/dep/mar',bad
+'no checking',48,'critical/other existing credit',8858,'no known savings','male single',good
+'no checking',12,'critical/other existing credit',996,'no known savings','female div/dep/mar',good
+'no checking',24,'critical/other existing credit',2578,>=1000,'male single',good
+0<=X<200,48,'existing paid',3979,'no known savings','male single',good
+<0,48,'existing paid',6758,<100,'female div/dep/mar',bad
+<0,24,'existing paid',3234,<100,'female div/dep/mar',bad
+'no checking',30,'critical/other existing credit',5954,<100,'male single',good
+'no checking',24,'existing paid',5433,'no known savings','female div/dep/mar',good
+<0,15,'existing paid',806,<100,'female div/dep/mar',good
+0<=X<200,9,'existing paid',1082,<100,'male single',good
+'no checking',15,'critical/other existing credit',2788,<100,'female div/dep/mar',good
+0<=X<200,12,'existing paid',2930,<100,'female div/dep/mar',good
+'no checking',24,'critical/other existing credit',1927,'no known savings','female div/dep/mar',good
+0<=X<200,36,'critical/other existing credit',2820,<100,'male div/sep',bad
+'no checking',24,'existing paid',937,<100,'male mar/wid',good
+<0,12,'critical/other existing credit',2246,<100,'male single',bad
+<0,12,'critical/other existing credit',385,<100,'female div/dep/mar',good
+0<=X<200,24,'delayed previously',1965,'no known savings','female div/dep/mar',good
+'no checking',21,'existing paid',1572,>=1000,'female div/dep/mar',good
+0<=X<200,24,'existing paid',2718,<100,'female div/dep/mar',bad
+<0,24,'existing paid',2384,<100,'male single',good
+'no checking',18,'existing paid',1453,<100,'female div/dep/mar',good
+'no checking',6,'existing paid',1538,<100,'female div/dep/mar',good
+'no checking',12,'existing paid',2279,'no known savings','male single',good
+'no checking',15,'delayed previously',1478,<100,'male mar/wid',good
+'no checking',24,'critical/other existing credit',5103,<100,'male mar/wid',good
+0<=X<200,36,'delayed previously',9857,100<=X<500,'male single',good
+'no checking',60,'existing paid',6527,'no known savings','male single',good
+>=200,10,'critical/other existing credit',1347,'no known savings','male single',good
+0<=X<200,36,'delayed previously',2862,100<=X<500,'male single',good
+'no checking',9,'existing paid',2753,100<=X<500,'male single',good
+<0,12,'existing paid',3651,>=1000,'male single',good
+<0,15,'critical/other existing credit',975,<100,'male div/sep',good
+0<=X<200,15,'existing paid',2631,100<=X<500,'female div/dep/mar',good
+0<=X<200,24,'existing paid',2896,100<=X<500,'male single',good
+<0,6,'critical/other existing credit',4716,'no known savings','male single',good
+'no checking',24,'existing paid',2284,<100,'male single',good
+'no checking',6,'existing paid',1236,500<=X<1000,'male single',good
+0<=X<200,12,'existing paid',1103,<100,'male single',good
+'no checking',12,'critical/other existing credit',926,<100,'female div/dep/mar',good
+'no checking',18,'critical/other existing credit',1800,<100,'male single',good
+>=200,9,'no credits/all paid',1337,<100,'male single',bad
+0<=X<200,6,'all paid',433,>=1000,'female div/dep/mar',bad
+<0,12,'existing paid',1228,<100,'female div/dep/mar',bad
+0<=X<200,9,'existing paid',790,500<=X<1000,'female div/dep/mar',good
+'no checking',27,'existing paid',2570,<100,'female div/dep/mar',bad
+'no checking',6,'critical/other existing credit',250,>=1000,'female div/dep/mar',good
+'no checking',15,'critical/other existing credit',1316,500<=X<1000,'male mar/wid',good
+<0,18,'existing paid',1882,<100,'female div/dep/mar',bad
+0<=X<200,48,'all paid',6416,<100,'female div/dep/mar',bad
+>=200,24,'critical/other existing credit',1275,>=1000,'male div/sep',good
+0<=X<200,24,'delayed previously',6403,<100,'male single',good
+<0,24,'existing paid',1987,<100,'male single',bad
+0<=X<200,8,'existing paid',760,<100,'female div/dep/mar',good
+'no checking',24,'existing paid',2603,>=1000,'female div/dep/mar',good
+'no checking',4,'critical/other existing credit',3380,<100,'female div/dep/mar',good
+0<=X<200,36,'all paid',3990,'no known savings','female div/dep/mar',good
+0<=X<200,24,'existing paid',11560,<100,'female div/dep/mar',bad
+<0,18,'existing paid',4380,100<=X<500,'male single',good
+<0,15,'existing paid',2511,<100,'female div/dep/mar',good
+<0,12,'existing paid',1274,<100,'female div/dep/mar',bad
+'no checking',21,'existing paid',5248,'no known savings','male single',good
+'no checking',15,'existing paid',3029,<100,'male single',good
+<0,6,'existing paid',428,<100,'female div/dep/mar',good
+<0,18,'existing paid',976,<100,'female div/dep/mar',bad
+0<=X<200,12,'existing paid',841,100<=X<500,'female div/dep/mar',good
+'no checking',30,'critical/other existing credit',5771,<100,'female div/dep/mar',good
+'no checking',12,'delayed previously',1555,>=1000,'male single',bad
+<0,24,'existing paid',1285,'no known savings','female div/dep/mar',bad
+>=200,6,'critical/other existing credit',1299,<100,'male single',good
+>=200,15,'critical/other existing credit',1271,'no known savings','male single',bad
+'no checking',24,'existing paid',1393,<100,'male single',good
+'no checking',10,'existing paid',2901,'no known savings','female div/dep/mar',good
+0<=X<200,12,'critical/other existing credit',3617,<100,'male single',good
+'no checking',12,'critical/other existing credit',1655,<100,'male single',good
+<0,24,'existing paid',2812,'no known savings','female div/dep/mar',good
+<0,36,'critical/other existing credit',8065,<100,'female div/dep/mar',bad
+'no checking',21,'critical/other existing credit',3275,<100,'male single',good
+'no checking',24,'critical/other existing credit',2223,100<=X<500,'male single',good
+>=200,12,'critical/other existing credit',1480,500<=X<1000,'male single',good
+<0,24,'existing paid',1371,'no known savings','female div/dep/mar',bad
+'no checking',36,'critical/other existing credit',3535,<100,'male single',good
+<0,18,'existing paid',3509,<100,'female div/dep/mar',good
+'no checking',36,'critical/other existing credit',5711,>=1000,'male single',good
+0<=X<200,20,'existing paid',6468,'no known savings','male div/sep',good
+0<=X<200,18,'existing paid',1941,>=1000,'male single',good
+'no checking',22,'existing paid',2675,500<=X<1000,'male single',good
+'no checking',48,'critical/other existing credit',2751,'no known savings','male single',good
+0<=X<200,48,'delayed previously',6224,<100,'male single',bad
+'no checking',12,'critical/other existing credit',976,'no known savings','male single',good
+0<=X<200,12,'existing paid',7472,'no known savings','female div/dep/mar',good
+<0,36,'existing paid',9271,<100,'male single',bad
+0<=X<200,6,'existing paid',590,<100,'male mar/wid',good
+'no checking',12,'critical/other existing credit',930,'no known savings','male single',good
+0<=X<200,42,'all paid',9283,<100,'male single',good
+0<=X<200,15,'no credits/all paid',1778,<100,'female div/dep/mar',bad
+0<=X<200,8,'existing paid',907,<100,'male mar/wid',good
+0<=X<200,6,'existing paid',484,<100,'male mar/wid',good
+<0,36,'critical/other existing credit',9629,<100,'male single',bad
+<0,48,'existing paid',3051,<100,'male single',bad
+<0,48,'existing paid',3931,<100,'male single',bad
+0<=X<200,36,'delayed previously',7432,<100,'female div/dep/mar',good
+'no checking',6,'existing paid',1338,500<=X<1000,'male div/sep',good
+'no checking',6,'critical/other existing credit',1554,<100,'female div/dep/mar',good
+<0,36,'existing paid',15857,<100,'male div/sep',good
+<0,18,'existing paid',1345,<100,'male mar/wid',bad
+'no checking',12,'existing paid',1101,<100,'male mar/wid',good
+>=200,12,'existing paid',3016,<100,'male mar/wid',good
+<0,36,'existing paid',2712,<100,'male single',bad
+<0,8,'critical/other existing credit',731,<100,'male single',good
+'no checking',18,'critical/other existing credit',3780,<100,'male div/sep',good
+<0,21,'critical/other existing credit',1602,<100,'male mar/wid',good
+<0,18,'critical/other existing credit',3966,<100,'female div/dep/mar',bad
+'no checking',18,'no credits/all paid',4165,<100,'male single',bad
+<0,36,'existing paid',8335,'no known savings','male single',bad
+0<=X<200,48,'delayed previously',6681,'no known savings','male single',good
+'no checking',24,'delayed previously',2375,500<=X<1000,'male single',good
+<0,18,'existing paid',1216,<100,'female div/dep/mar',bad
+<0,45,'no credits/all paid',11816,<100,'male single',bad
+0<=X<200,24,'existing paid',5084,'no known savings','female div/dep/mar',good
+>=200,15,'existing paid',2327,<100,'female div/dep/mar',bad
+<0,12,'no credits/all paid',1082,<100,'male single',bad
+'no checking',18,'existing paid',3422,<100,'male single',good
+0<=X<200,21,'existing paid',3976,'no known savings','male single',good
+'no checking',18,'existing paid',6761,'no known savings','male single',bad
+'no checking',24,'existing paid',1249,<100,'male mar/wid',good
+<0,9,'existing paid',1364,<100,'male single',good
+<0,12,'existing paid',709,<100,'male single',bad
+<0,20,'critical/other existing credit',2235,<100,'male mar/wid',bad
+'no checking',24,'critical/other existing credit',4042,'no known savings','male single',good
+'no checking',15,'critical/other existing credit',1471,<100,'male single',good
+<0,18,'all paid',1442,<100,'male single',bad
+'no checking',36,'delayed previously',10875,<100,'male single',good
+'no checking',24,'existing paid',1474,100<=X<500,'male mar/wid',good
+'no checking',10,'existing paid',894,'no known savings','female div/dep/mar',good
+'no checking',15,'critical/other existing credit',3343,<100,'male single',good
+<0,15,'existing paid',3959,<100,'female div/dep/mar',bad
+'no checking',9,'existing paid',3577,100<=X<500,'male single',good
+'no checking',24,'critical/other existing credit',5804,>=1000,'male single',good
+<0,24,'critical/other existing credit',1382,100<=X<500,'male single',good
+'no checking',15,'existing paid',874,'no known savings','female div/dep/mar',good
+<0,12,'existing paid',3590,<100,'male single',good
+0<=X<200,11,'critical/other existing credit',1322,>=1000,'female div/dep/mar',good
+<0,18,'all paid',1940,<100,'male single',good
+'no checking',36,'existing paid',3595,<100,'male single',good
+<0,9,'existing paid',1422,<100,'male single',bad
+'no checking',30,'critical/other existing credit',6742,'no known savings','male single',good
+'no checking',24,'existing paid',7814,<100,'male single',good
+'no checking',24,'existing paid',9277,'no known savings','male div/sep',good
+0<=X<200,30,'critical/other existing credit',2181,'no known savings','male single',good
+'no checking',18,'critical/other existing credit',1098,<100,'female div/dep/mar',good
+0<=X<200,24,'existing paid',4057,<100,'male div/sep',bad
+<0,12,'existing paid',795,<100,'female div/dep/mar',bad
+0<=X<200,24,'critical/other existing credit',2825,'no known savings','male single',good
+0<=X<200,48,'existing paid',15672,<100,'male single',bad
+'no checking',36,'critical/other existing credit',6614,<100,'male single',good
+'no checking',28,'all paid',7824,'no known savings','male single',good
+<0,27,'critical/other existing credit',2442,<100,'male single',good
+'no checking',15,'critical/other existing credit',1829,<100,'male single',good
+<0,12,'critical/other existing credit',2171,<100,'male single',good
+0<=X<200,36,'critical/other existing credit',5800,<100,'male single',good
+'no checking',18,'critical/other existing credit',1169,'no known savings','male single',good
+'no checking',36,'delayed previously',8947,'no known savings','male single',good
+<0,21,'existing paid',2606,<100,'female div/dep/mar',good
+'no checking',12,'critical/other existing credit',1592,>=1000,'female div/dep/mar',good
+'no checking',15,'existing paid',2186,'no known savings','female div/dep/mar',good
+<0,18,'existing paid',4153,<100,'male single',bad
+<0,16,'critical/other existing credit',2625,<100,'male single',bad
+'no checking',20,'critical/other existing credit',3485,'no known savings','male div/sep',good
+'no checking',36,'critical/other existing credit',10477,'no known savings','male single',good
+'no checking',15,'existing paid',1386,'no known savings','male mar/wid',good
+'no checking',24,'existing paid',1278,<100,'male single',good
+0<=X<200,48,'no credits/all paid',18424,<100,'female div/dep/mar',bad
+'no checking',10,'existing paid',2848,100<=X<500,'male single',good
+<0,6,'existing paid',14896,<100,'male single',bad
+<0,24,'existing paid',2359,100<=X<500,'male div/sep',bad
+<0,24,'existing paid',3345,<100,'male single',bad
+'no checking',18,'critical/other existing credit',1817,<100,'female div/dep/mar',good
+'no checking',48,'delayed previously',12749,500<=X<1000,'male single',good
+<0,9,'existing paid',1366,<100,'female div/dep/mar',bad
+0<=X<200,12,'existing paid',2002,<100,'male single',good
+<0,24,'all paid',6872,<100,'male div/sep',bad
+<0,12,'all paid',697,<100,'male single',bad
+<0,18,'critical/other existing credit',1049,<100,'female div/dep/mar',good
+<0,48,'existing paid',10297,<100,'male single',bad
+'no checking',30,'existing paid',1867,'no known savings','male single',good
+<0,12,'delayed previously',1344,<100,'male single',good
+<0,24,'existing paid',1747,<100,'male single',good
+0<=X<200,9,'existing paid',1670,<100,'female div/dep/mar',bad
+'no checking',9,'critical/other existing credit',1224,<100,'male single',good
+'no checking',12,'critical/other existing credit',522,500<=X<1000,'male single',good
+<0,12,'existing paid',1498,<100,'female div/dep/mar',good
+0<=X<200,30,'delayed previously',1919,100<=X<500,'male single',bad
+>=200,9,'existing paid',745,<100,'female div/dep/mar',bad
+0<=X<200,6,'existing paid',2063,<100,'male mar/wid',good
+0<=X<200,60,'existing paid',6288,<100,'male single',bad
+'no checking',24,'critical/other existing credit',6842,'no known savings','male single',good
+'no checking',12,'existing paid',3527,'no known savings','male single',good
+'no checking',10,'existing paid',1546,<100,'male single',good
+'no checking',24,'existing paid',929,'no known savings','male single',good
+'no checking',4,'critical/other existing credit',1455,<100,'male single',good
+<0,15,'existing paid',1845,<100,'female div/dep/mar',good
+<0,24,'all paid',1193,<100,'female div/dep/mar',bad
+<0,60,'existing paid',7297,<100,'male single',bad
