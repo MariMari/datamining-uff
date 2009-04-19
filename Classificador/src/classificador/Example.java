@@ -15,18 +15,18 @@ public class Example {
     
     //Constantes referentes aos valores dos dominios dos atributos discretos.
     private static final String[] dominioSaldo = 
-            {"<0", "0<=X<200", ">=200", "no checking"};
+            {"<0", "0<=X<200", ">=200", "'no checking'"};
     
     private static final String[] dominioHistCredito = 
-            {"no credits/all paid", "all paid", "existing paid",
-             "delayed previously", "critical/other existing credit"};
+            {"'no credits/all paid'", "'all paid'", "'existing paid'",
+             "'delayed previously'", "'critical/other existing credit'"};
     
     private static final String[] dominioEconomias =
-            {"<100", "100<=X<500", "500<=X<1000", ">=1000", "no known savings"};
+            {"<100", "100<=X<500", "500<=X<1000", ">=1000", "'no known savings'"};
     
     private static final String[] dominioEstPessoal =
-            {"male div/sep", "female div/sep/mar", "male single",
-             "male mar/wid", "female single"};
+            {"'male div/sep'", "'female div/dep/mar'", "'male single'",
+             "'male mar/wid'", "'female single'"};
     
     private static final String[] dominioClasse =
             {"good", "bad"};
@@ -115,12 +115,12 @@ public class Example {
     @Override
     public String toString () {
         String stringExample = "Saldo: " + attrNumericalToString(dominioSaldo, saldo)
-                     + "\n Duração do empréstimo: " + duracao_emp
-                     + "\n Histórico de Crédito: " + attrNumericalToString(dominioHistCredito, hist_credito)
-                     + "\n Valor do empréstimo: " + valor
-                     + "\n Economias: " + attrNumericalToString(dominioEconomias, economias)
-                     + "\n Estado pessoal: " + attrNumericalToString(dominioEstPessoal, est_pessoal)
-                     + "\n Classe: " + attrNumericalToString(dominioClasse, classe);
+                     + "\nDuração do empréstimo: " + duracao_emp
+                     + "\nHistórico de Crédito: " + attrNumericalToString(dominioHistCredito, hist_credito)
+                     + "\nValor do empréstimo: " + valor
+                     + "\nEconomias: " + attrNumericalToString(dominioEconomias, economias)
+                     + "\nEstado pessoal: " + attrNumericalToString(dominioEstPessoal, est_pessoal)
+                     + "\nClasse: " + attrNumericalToString(dominioClasse, classe);
         return stringExample;
     }
 }

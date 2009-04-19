@@ -36,19 +36,20 @@ public class Main {
     
     public static void main(String[] args) {
         try {
+            // Avaliando as opcoes passadas ao classificador
             String trainingFileName = getOption("t", args);
-            String instanceFileName = getOption("i", args);
-            String classFileName = getOption("c", args);
+//            String instanceFileName = getOption("i", args);
+//            String classFileName = getOption("c", args);
 
             DataBase dataBase = new DataBase(trainingFileName);
 
-            String register = getParameter(classFileName);
-            String classe = getParameter(instanceFileName);
-            
-            Example client = new Example (register + ",-"); /* gambiarra! A entrada nao possui classe,
-                                                    logo causa erro na criaçao do objeto Example!
-                                                   */      
-            client.toString();
+//            String register = getParameter(classFileName);
+//            String classe = getParameter(instanceFileName);
+//            
+//            Example client = new Example (register + ",-"); /* gambiarra! A entrada nao possui classe,
+//                                                    logo causa erro na criaçao do objeto Example!
+//                                                   */      
+//            client.toString();
             System.out.println(dataBase.toString());
 
         } catch (Exception e) {

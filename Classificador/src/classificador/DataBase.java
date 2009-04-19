@@ -39,11 +39,11 @@ public class DataBase {
         try {
             BufferedReader in = new BufferedReader(new FileReader(file));
             String lineRead = null;
+            data = new ArrayList<Example>();
             
-            while (in.ready()) {
-                lineRead = in.readLine();
+            while ((lineRead = in.readLine()) != null) {
                 Example example = new Example(lineRead);
-                this.addExample(example);
+                addExample(example);
             }
             
             in.close();

@@ -28,7 +28,7 @@ public class Utils {
             while (intValue < domain.length && !domain[intValue].equals(value))
                 intValue++;
             if (intValue >= domain.length)
-                throw new Exception("Valor \"" + value + "\" nao pertence ao dominio." );
+                throw new Exception("Valor " + value + " nao pertence ao dominio." );
         }
 
         return intValue;
@@ -54,12 +54,12 @@ public class Utils {
         int i = 0;
         String readFlag = options[i];
 
-        while ((i < options.length) && !readFlag.equals(flag)) {
-            i = i + 2;
+        while ((i < options.length) && !readFlag.equals("-" + flag)) {
             readFlag = options[i];
+            i = i + 2;
         }
 
-        if (!readFlag.equals(flag)) {
+        if (!readFlag.equals("-" + flag)) {
             throw new Exception("A opcao " + flag + " nao pode ser encontrada!");
         }
         return options[i + 1];
