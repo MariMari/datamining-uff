@@ -112,15 +112,32 @@ public class Example {
         this.classe = classe;
     }
     
+    /**
+     * Retorna a representacao do exemplo em String. O formato e o mesmo de um
+     * registro em uma base de dados.
+     * 
+     * @return a representacao do exemplo em formato de registro 
+     */
+    public String toRegisterString() {
+        String registerExample = attrNumericalToString(dominioSaldo, saldo)
+                     + "," + duracao_emp
+                     + "," + attrNumericalToString(dominioHistCredito, hist_credito)
+                     + "," + valor
+                     + "," + attrNumericalToString(dominioEconomias, economias)
+                     + "," + attrNumericalToString(dominioEstPessoal, est_pessoal)
+                     + "," + attrNumericalToString(dominioClasse, classe);
+        return null;
+    }
+    
     @Override
     public String toString () {
-        String stringExample = "Saldo: " + attrNumericalToString(dominioSaldo, saldo)
+        String example = "Saldo: " + attrNumericalToString(dominioSaldo, saldo)
                      + "\nDuração do empréstimo: " + duracao_emp
                      + "\nHistórico de Crédito: " + attrNumericalToString(dominioHistCredito, hist_credito)
                      + "\nValor do empréstimo: " + valor
                      + "\nEconomias: " + attrNumericalToString(dominioEconomias, economias)
                      + "\nEstado pessoal: " + attrNumericalToString(dominioEstPessoal, est_pessoal)
                      + "\nClasse: " + attrNumericalToString(dominioClasse, classe);
-        return stringExample;
+        return example;
     }
 }

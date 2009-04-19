@@ -30,8 +30,8 @@ public class DataBase {
         data.add(example);
     }
     
-    public Example getExample (int index) {
-        return (Example) data.get(index);
+    public Example example (int index) {
+        return data.get(index);
     }
     
     public void createDataBase (File file) throws Exception {
@@ -54,13 +54,27 @@ public class DataBase {
         }
     }
    
+    /**
+     * Retorna a representacao da base de dados em String. O formato e o mesmo
+     * de uma base de dados formatada para ser lida.
+     * 
+     * @return a representacao da base de dados em formato de leitura
+     */
+    public String toDataBaseString() {
+        String dataBase = null;
+        for (int i = 0; i < data.size(); i++) {
+            dataBase = dataBase + example(i).toRegisterString() + "\n";
+        }
+        return dataBase;
+    }
+    
     @Override
     public String toString () {
-        String out = null;
+        String dataBase = null;
         for (int i = 0; i < data.size(); i++) {
-            out = out + this.getExample(i).toString() + "\n";
+            dataBase = dataBase + this.example(i).toString() + "\n";
         }
-        return out;
+        return dataBase;
     }
 
 }
