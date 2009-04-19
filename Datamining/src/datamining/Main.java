@@ -3,9 +3,9 @@
  * and open the template in the editor.
  */
 
-package classificador;
+package datamining;
 import java.io.*;
-import static classificador.Utils.*;
+import static datamining.Utils.*;
 /**
  *
  * @author MariMari

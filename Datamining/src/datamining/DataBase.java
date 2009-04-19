@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package classificador;
+package datamining;
 import java.io.*;
 import java.util.ArrayList;
 
