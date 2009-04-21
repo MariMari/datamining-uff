@@ -1,0 +1,37 @@
+<0,6,'critical/other existing credit',1169,'no known savings','male single',good
+0<=X<200,48,'existing paid',5951,<100,'female div/dep/mar',bad
+'no checking',12,'critical/other existing credit',2096,<100,'male single',good
+<0,42,'existing paid',7882,<100,'male single',good
+<0,24,'delayed previously',4870,<100,'male single',bad
+'no checking',36,'existing paid',9055,'no known savings','male single',good
+'no checking',24,'existing paid',2835,500<=X<1000,'male single',good
+0<=X<200,36,'existing paid',6948,<100,'male single',good
+'no checking',12,'existing paid',3059,>=1000,'male div/sep',good
+0<=X<200,30,'critical/other existing credit',5234,<100,'male mar/wid',bad
+0<=X<200,12,'existing paid',1295,<100,'female div/dep/mar',bad
+<0,48,'existing paid',4308,<100,'female div/dep/mar',bad
+0<=X<200,12,'existing paid',1567,<100,'female div/dep/mar',good
+<0,24,'critical/other existing credit',1199,<100,'male single',bad
+<0,15,'existing paid',1403,<100,'female div/dep/mar',good
+<0,24,'existing paid',1282,100<=X<500,'female div/dep/mar',bad
+'no checking',24,'critical/other existing credit',2424,'no known savings','male single',good
+<0,30,'no credits/all paid',8072,'no known savings','male single',good
+0<=X<200,24,'existing paid',12579,<100,'female div/dep/mar',bad
+'no checking',24,'existing paid',3430,500<=X<1000,'male single',good
+'no checking',9,'critical/other existing credit',2134,<100,'male single',good
+<0,6,'existing paid',2647,500<=X<1000,'male single',good
+<0,10,'critical/other existing credit',2241,<100,'male single',good
+0<=X<200,12,'critical/other existing credit',1804,100<=X<500,'male single',good
+'no checking',10,'critical/other existing credit',2069,'no known savings','male mar/wid',good
+<0,6,'existing paid',1374,<100,'male single',good
+'no checking',6,'no credits/all paid',426,<100,'male mar/wid',good
+>=200,12,'all paid',409,>=1000,'female div/dep/mar',good
+0<=X<200,7,'existing paid',2415,<100,'male single',good
+<0,60,'delayed previously',6836,<100,'male single',bad
+0<=X<200,18,'existing paid',1913,>=1000,'male mar/wid',good
+<0,24,'existing paid',4020,<100,'male single',good
+0<=X<200,18,'existing paid',5866,100<=X<500,'male single',good
+'no checking',12,'critical/other existing credit',1264,'no known savings','male single',good
+>=200,12,'existing paid',1474,<100,'female div/dep/mar',good
+0<=X<200,45,'critical/other existing credit',4746,<100,'male single',bad
+'no checking',48,'critical/other existing credit',6110,<100,'male single',good

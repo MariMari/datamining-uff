@@ -1,0 +1,4 @@
+#Build
+Classificador/dist/*
+Classificador/build/*
+Classificador/nbproject/private/*

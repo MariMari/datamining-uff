@@ -1,0 +1,1 @@
+'no checking',30,'existing paid',2333,500<=X<1000,'male single'
