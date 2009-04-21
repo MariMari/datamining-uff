@@ -72,7 +72,7 @@ public class DataBase {
     public String toString () {
         String dataBase = null;
         for (int i = 0; i < data.size(); i++) {
-            dataBase = dataBase + this.example(i).toString() + "\n";
+            dataBase = dataBase + this.example(i).toString() + "\n\n";
         }
         return dataBase;
     }
