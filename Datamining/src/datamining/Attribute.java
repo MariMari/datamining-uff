@@ -68,7 +68,7 @@ public class Attribute {
      */
     public String getDomainValue(int index) {
         String domainValue = null;
-        if ((index > -1) && (index < domain.size()))          
+        if ((index > -1) && (index < domain.size()))
             domainValue = domain.get(index);
         return domainValue;
     }
@@ -102,6 +102,26 @@ public class Attribute {
      */
     public boolean hasEmptyDomain() {
         return domain.size() > 1;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        boolean equal = true;
+        try {
+            Attribute attr = (Attribute) obj;
+            if (this.name.equals(attr.getName()))
+                equal = false;
+        } catch (ClassCastException e) {
+            return false;
+        }
+        return equal;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 71 * hash + (this.name != null ? this.name.hashCode() : 0);
+        return hash;
     }
     
 }
