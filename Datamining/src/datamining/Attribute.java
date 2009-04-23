@@ -88,7 +88,7 @@ public class Attribute {
      * Inclui o valor value se esse nao existe no dominio, isso garante que
      * o dominio seja um conjunto.
      * 
-     * @param value valor do dominio a ser excluido 
+     * @param value valor do dominio a ser incluido
      */
     public void addDomainValue(String value) {
         if (!domain.contains(value))

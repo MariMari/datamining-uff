@@ -56,17 +56,37 @@ public class DataBase {
         return data.get(index);
     }
     
+    /**
+     * Inclui o atributo attribute se esse nao existe no dominio, isso garante
+     * que attributes seja um conjunto.
+     * 
+     * @param attribute atributo a ser incluido
+     */
     public void addAttribute(Attribute attribute) {
         if (!attributes.contains(attribute))
             attributes.add(attribute);
     }
     
+    /**
+     * Metodo para recuperar um atributo pelo indice
+     * 
+     * @param index indice do atributo
+     * 
+     * @return      o atributo relativo ao indice index
+     */
     public Attribute attribute(int index) throws Exception {
         if (index < 0 || index >= attributes.size())
             throw new Exception("Atributo inexistente");
         return attributes.get(index);
     }
     
+    /**
+     * Metodo para recuperar um atributo pelo nome
+     * 
+     * @param name nome do atributo
+     * 
+     * @return     o atributo com nome name
+     */
     public Attribute attribute(String name) throws Exception {
         int index = attributes.indexOf(new Attribute(name, true, 0));
         return attribute(index);
@@ -76,6 +96,11 @@ public class DataBase {
         return classIndex;
     }
     
+    /**
+     * Metodo para atribuir um valor indice que representa o atributo classe
+     * 
+     * @param classIndex indice do valor classe
+     */
     public void setClassIndex(int classIndex) throws Exception {
         if (classIndex < 0 || classIndex >= attributes.size())
             throw new Exception("Atributo inexistente");
@@ -125,6 +150,10 @@ public class DataBase {
         return dataBase;
     }
     
+    /**
+     * Metodo para atribuicao de valores fixos para o primeiro trabalho de 
+     * implementacao de datamining
+     */
     private void initDataBase() {
         attributes = new ArrayList<Attribute>();
         
