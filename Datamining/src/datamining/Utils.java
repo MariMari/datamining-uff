@@ -22,6 +22,9 @@ public class Utils {
      * @return o valor da opcao desejada
      */
     public static String getOption(String flag, String[] options) throws Exception {
+        if (options.length == 0) {
+            throw new Exception("Nenhuma opcao foi definida!");
+        }
         int i = 0;
         String readFlag = options[i];
 
