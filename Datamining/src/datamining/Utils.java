@@ -4,34 +4,53 @@
  */
 package datamining;
 
+import java.util.LinkedList;
+import static java.lang.Math.*;
+
 /**
  *
  * @author igor
  */
 public class Utils {
+    
+    /**
+     * Retorna uma opcao sinalizada por uma flag  no array de opcoes.
+     * 
+     * @param flag    sinalizador da opcao desejada
+     * @param options array com sinalizadores e opcoes
+     * 
+     * @return o valor da opcao desejada
+     */
+    public static String getOption(String flag, String[] options) throws Exception {
+        int i = 0;
+        String readFlag = options[i];
 
-    public static double entropy(Attribute attribute) throws Exception {
-        int i,size;
-        double probability,sum;
-
-        sum = 0;
-        size = attribute.getDomainSize();
-
-        for(i = 0; i < size; i++)
-        {
-            probability = probability(attribute.getDomainValue(Double.valueOf(i)));
-            sum = sum + (probability * log(probability,2));
+        while ((i < options.length) && !readFlag.equals("-" + flag)) {
+            readFlag = options[i];
+            i = i + 2;
         }
 
-        return ((-1) * sum);
-
+        if (!readFlag.equals("-" + flag)) {
+            throw new Exception("A opcao " + flag + " nao pode ser encontrada!");
+        }
+        return options[i + 1];
+    }
+    
+    /**
+     * Efetua o calculo da entropia de Shannon para uma colecao de
+     * probabilidades
+     * 
+     * @param probs colecao de probabilidades
+     * 
+     * @return o valor da entropia para as probabilidades passadas
+     */
+    public static Double entropy(LinkedList<Double> probs) {
+        double entropyValue = 0;
+        while (!probs.isEmpty()) {
+            double px = probs.poll().doubleValue();
+            entropyValue += (log(px)/log(2));
+        }
+        return Double.valueOf(entropyValue);
     }
 
-    private static double probability(String domainValue){
-        return 0;
-    }
-
-    private static double log(double number, int base){
-        return(Math.log10(number)/Math.log10(base));
-    }
 }
