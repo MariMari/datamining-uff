@@ -16,24 +16,7 @@ public class Main {
 
     /**
      * @param args the command line arguments
-     */
-    
-    public static String getParameter (String fileName) {
-         //metodo que le do fileName qual parametro utilizar para a classificação
-        try {
-            String classe = null;
-            BufferedReader in = new BufferedReader(new FileReader(fileName));
-            while (in.ready()) {
-                classe = in.readLine();
-            }
-            in.close();
-            return classe;
-        } catch (IOException e) {
-            System.out.println("Erro ao ler parametro!");
-            return null;
-        }
-    }
-    
+     */    
     public static void main(String[] args) {
         try {
             // Avaliando as opcoes passadas ao classificador

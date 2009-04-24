@@ -22,7 +22,6 @@ public class Attribute {
     
     public Attribute() {       
         domain = new ArrayList<String>();
-        domain.add(MISSING_VALUE);
     }
 
     
@@ -66,10 +65,21 @@ public class Attribute {
      * @param  index a representacao numerica do valor do atributo.
      * @return       o valor mapeado no dominio por index.
      */
-    public String getDomainValue(int index) {
-        String domainValue = null;
-        if ((index > -1) && (index < domain.size()))
-            domainValue = domain.get(index);
+    public String getDomainValue(Double index) throws Exception {
+        String domainValue = MISSING_VALUE;
+        if (!index.isNaN()) {
+            if (!discrete) {
+                domainValue = index.toString();
+            } else {
+                int intIndex = index.intValue();
+                if ((intIndex > -1) && (intIndex < domain.size())) {
+                    domainValue = domain.get(intIndex);
+                } else {
+                    throw new Exception("O valor nao pode ser encontrado no"
+                                        + " dominio do atributo: " + name );
+                }
+            }
+        }
         return domainValue;
     }
     
@@ -80,8 +90,22 @@ public class Attribute {
      * @param   domainValue  o valor do atributo
      * @return               a representacao numerica de domainValue.
      */
-    public int integerForDomainValue(String domainValue) {
-        return domain.indexOf(domainValue);
+    public Double doubleForDomainValue(String domainValue) throws Exception {
+        Double value = Double.NaN;
+        if (!domainValue.equals(MISSING_VALUE)) {
+            if (!discrete) {
+                value = Double.valueOf(domainValue);
+            } else {
+                int intValue = domain.indexOf(domainValue);
+                if (intValue == -1) {
+                    throw new Exception("O valor " + domainValue + " nao tem"
+                                        + " correspondente no dominio do"
+                                        + " atributo: " + name);
+                }
+                value  = Double.valueOf(intValue);
+            }
+        }
+        return value;
     }
     
     /**

@@ -89,7 +89,14 @@ public class DataBase {
      */
     public Attribute attribute(String name) throws Exception {
         int index = attributes.indexOf(new Attribute(name, true, 0));
+        if (index == -1) {
+            throw new Exception("Atributo inexistente");
+        }
         return attribute(index);
+    }
+    
+    public int numAttributes() {
+        return attributes.size();
     }
     
     public int getClassIndex() {
@@ -108,14 +115,13 @@ public class DataBase {
     }
     
     private void createDataBase (File file) throws Exception {
-    //copia e trata as entradas da base de dados
         try {
             BufferedReader in = new BufferedReader(new FileReader(file));
             String lineRead = null;
             data = new ArrayList<Example>();
             
             while ((lineRead = in.readLine()) != null) {
-                Example example = new Example(lineRead);
+                Example example = new Example(this, lineRead);
                 addExample(example);
             }
             
@@ -133,7 +139,7 @@ public class DataBase {
      * 
      * @return a representacao da base de dados em formato de leitura
      */
-    public String toDataBaseString() {
+    public String toDataBaseString() throws Exception {
         String dataBase = null;
         for (int i = 0; i < data.size(); i++) {
             dataBase = dataBase + example(i).toRegisterString() + "\n";
@@ -143,9 +149,9 @@ public class DataBase {
     
     @Override
     public String toString () {
-        String dataBase = null;
+        String dataBase = "";
         for (int i = 0; i < data.size(); i++) {
-            dataBase = dataBase + this.example(i).toString() + "\n\n";
+            dataBase = dataBase + this.example(i).toString() + "\n";
         }
         return dataBase;
     }
