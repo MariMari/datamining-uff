@@ -65,7 +65,7 @@ public class Utils {
         return options[i + 1];
     }
 
-    public static double entropy(Attribute attribute){
+    public static double entropy(Attribute attribute) throws Exception {
         int i,size;
         double probability,sum;
 
@@ -74,7 +74,7 @@ public class Utils {
 
         for(i = 0; i < size; i++)
         {
-            probability = probability(attribute.getDomainValue(i));
+            probability = probability(attribute.getDomainValue(Double.valueOf(i)));
             sum = sum + (probability * log(probability,2));
         }
 
