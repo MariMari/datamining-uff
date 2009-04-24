@@ -22,7 +22,6 @@ public class Attribute {
     
     public Attribute() {       
         domain = new ArrayList<String>();
-        domain.add(MISSING_VALUE);
     }
 
     
@@ -70,10 +69,21 @@ public class Attribute {
      * @param  index a representacao numerica do valor do atributo.
      * @return       o valor mapeado no dominio por index.
      */
-    public String getDomainValue(int index) {
-        String domainValue = null;
-        if ((index > -1) && (index < domain.size()))          
-            domainValue = domain.get(index);
+    public String getDomainValue(Double index) throws Exception {
+        String domainValue = MISSING_VALUE;
+        if (!index.isNaN()) {
+            if (!discrete) {
+                domainValue = index.toString();
+            } else {
+                int intIndex = index.intValue();
+                if ((intIndex > -1) && (intIndex < domain.size())) {
+                    domainValue = domain.get(intIndex);
+                } else {
+                    throw new Exception("O valor nao pode ser encontrado no"
+                                        + " dominio do atributo: " + name );
+                }
+            }
+        }
         return domainValue;
     }
     
@@ -84,15 +94,29 @@ public class Attribute {
      * @param   domainValue  o valor do atributo
      * @return               a representacao numerica de domainValue.
      */
-    public int integerForDomainValue(String domainValue) {
-        return domain.indexOf(domainValue);
+    public Double doubleForDomainValue(String domainValue) throws Exception {
+        Double value = Double.NaN;
+        if (!domainValue.equals(MISSING_VALUE)) {
+            if (!discrete) {
+                value = Double.valueOf(domainValue);
+            } else {
+                int intValue = domain.indexOf(domainValue);
+                if (intValue == -1) {
+                    throw new Exception("O valor " + domainValue + " nao tem"
+                                        + " correspondente no dominio do"
+                                        + " atributo: " + name);
+                }
+                value  = Double.valueOf(intValue);
+            }
+        }
+        return value;
     }
     
     /**
      * Inclui o valor value se esse nao existe no dominio, isso garante que
      * o dominio seja um conjunto.
      * 
-     * @param value valor do dominio a ser excluido 
+     * @param value valor do dominio a ser incluido
      */
     public void addDomainValue(String value) {
         if (!domain.contains(value))
@@ -106,6 +130,26 @@ public class Attribute {
      */
     public boolean hasEmptyDomain() {
         return domain.size() > 1;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        boolean equal = true;
+        try {
+            Attribute attr = (Attribute) obj;
+            if (this.name.equals(attr.getName()))
+                equal = false;
+        } catch (ClassCastException e) {
+            return false;
+        }
+        return equal;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 71 * hash + (this.name != null ? this.name.hashCode() : 0);
+        return hash;
     }
     
 }

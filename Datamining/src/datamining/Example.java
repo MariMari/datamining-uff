@@ -4,7 +4,7 @@
  */
 package datamining;
 
-import static datamining.Utils.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,103 +13,54 @@ import static datamining.Utils.*;
  */
 public class Example {
     
-    //Constantes referentes aos valores dos dominios dos atributos discretos.
-    private static final String[] dominioSaldo = 
-            {"<0", "0<=X<200", ">=200", "'no checking'"};
+    private DataBase dataBase;
+    private ArrayList<Double> attrValues;
+        
+    public Example(DataBase base, String line) throws Exception {
+        dataBase = base;
+        String [] strAttrs = line.split(",");
+        if (strAttrs.length != dataBase.numAttributes()){
+            throw new Exception("Numero de atributos errado");
+        }
+        attrValues = new ArrayList<Double>(dataBase.numAttributes());
+        for (int i = 0; i < dataBase.numAttributes(); i++) {
+            Double value = dataBase.attribute(i).doubleForDomainValue(strAttrs[i]);
+            attrValues.add(value);
+        }
+    }
     
-    private static final String[] dominioHistCredito = 
-            {"'no credits/all paid'", "'all paid'", "'existing paid'",
-             "'delayed previously'", "'critical/other existing credit'"};
+    public void setDataBase(DataBase dataBase) {
+        this.dataBase = dataBase;
+    }
     
-    private static final String[] dominioEconomias =
-            {"<100", "100<=X<500", "500<=X<1000", ">=1000", "'no known savings'"};
-    
-    private static final String[] dominioEstPessoal =
-            {"'male div/sep'", "'female div/dep/mar'", "'male single'",
-             "'male mar/wid'", "'female single'"};
-    
-    private static final String[] dominioClasse =
-            {"good", "bad"};
-
-    private double valor;
-    private int duracao_emp;
-    private int saldo;
-    private int hist_credito;
-    private int economias;
-    private int est_pessoal;
-    private int classe;
-
-    Example(String lineRead) throws IllegalArgumentException {
-            String [] attributes = lineRead.split(",");
+    public DataBase getDataBase() {
+        return dataBase;
+    }
             
-            setValor(Double.parseDouble(attributes[3]));
-            
-            setDuracao(Integer.parseInt(attributes[1]));
-            try {
-                setSaldo(attrStringToNumerical(dominioSaldo, attributes[0]));
-                setHistorico(attrStringToNumerical(dominioHistCredito,attributes[2]));
-                setEconomias(attrStringToNumerical(dominioEconomias, attributes[4]));
-                setEstPessoal(attrStringToNumerical(dominioEstPessoal, attributes[5]));
-                setClasse(attrStringToNumerical(dominioClasse, attributes[6]));
-            } catch (Exception e) {
-                throw new IllegalArgumentException(e.getMessage());
-            }
+    public Double getAttrValue(int index) throws Exception {
+        if (index < 0 || index >= attrValues.size())
+            throw new Exception("Valor inexistente");
+        return attrValues.get(index);
     }
     
-    public int getDuracao() {
-        return duracao_emp;
+    public Double getAttrValue(String name) throws Exception {
+        Attribute attr = dataBase.attribute(name);
+        return attrValues.get(attr.getIndex());
+    }
+        
+    public Double[] getAttrValues() {
+        Double[] values = null;
+        this.attrValues.toArray(values);
+        return values;
     }
     
-    public double getValor() {
-        return valor;
-    }
-
-    public int getSaldo() {
-        return saldo;
-    }
-
-    public int getHistorico() {
-        return hist_credito;
-    }
-
-    public int getEconomias() {
-        return economias;
-    }
-
-    public int getEstPessoal() {
-        return est_pessoal;
-    }
-
-    public int getClasse() {
-        return classe;
+    public void setAttrValue(int index, Double value) {
+        if (index < 0 || index >= attrValues.size())
+            attrValues.set(index, value);
     }
     
-    public void setDuracao(int duracao) {
-        duracao_emp = duracao;
-    }
-    
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-
-    public void setSaldo(int saldo) {
-        this.saldo = saldo;
-    }
-
-    public void setHistorico(int historico) {
-        hist_credito = historico;
-    }
-
-    public void setEconomias(int economias) {
-        this.economias = economias;
-    }
-
-    public void setEstPessoal(int estPessoal) {
-        this.est_pessoal = estPessoal;
-    }
-
-    public void setClasse(int classe) {
-        this.classe = classe;
+    public int numAttributes() {
+        return attrValues.size();
     }
     
     /**
@@ -118,26 +69,28 @@ public class Example {
      * 
      * @return a representacao do exemplo em formato de registro 
      */
-    public String toRegisterString() {
-        String registerExample = attrNumericalToString(dominioSaldo, saldo)
-                     + "," + duracao_emp
-                     + "," + attrNumericalToString(dominioHistCredito, hist_credito)
-                     + "," + valor
-                     + "," + attrNumericalToString(dominioEconomias, economias)
-                     + "," + attrNumericalToString(dominioEstPessoal, est_pessoal)
-                     + "," + attrNumericalToString(dominioClasse, classe);
-        return null;
+    public String toRegisterString() throws Exception {
+        String example = dataBase.attribute(0).getDomainValue(attrValues.get(0));
+        for (int i = 0; i < attrValues.size(); i++) {
+            String strAttr = dataBase.attribute(i).getDomainValue(
+                                                   attrValues.get(i));
+            example += ", " + strAttr;
+        }
+        return example;
     }
-    
+
     @Override
     public String toString () {
-        String example = "Saldo: " + attrNumericalToString(dominioSaldo, saldo)
-                     + "\nDuração do empréstimo: " + duracao_emp
-                     + "\nHistórico de Crédito: " + attrNumericalToString(dominioHistCredito, hist_credito)
-                     + "\nValor do empréstimo: " + valor
-                     + "\nEconomias: " + attrNumericalToString(dominioEconomias, economias)
-                     + "\nEstado pessoal: " + attrNumericalToString(dominioEstPessoal, est_pessoal)
-                     + "\nClasse: " + attrNumericalToString(dominioClasse, classe);
+        String example = "";
+        for (int i = 0; i < attrValues.size(); i++) {
+            try {
+                Attribute attr = dataBase.attribute(i);
+                example += attr.getName() + ": "
+                           + attr.getDomainValue(attrValues.get(i)) + "\n";
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
         return example;
     }
 }
