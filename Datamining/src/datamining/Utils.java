@@ -64,4 +64,29 @@ public class Utils {
         }
         return options[i + 1];
     }
+
+    public static double entropy(Attribute attribute){
+        int i,size;
+        double probability,sum;
+
+        sum = 0;
+        size = attribute.getDomainSize();
+
+        for(i = 0; i < size; i++)
+        {
+            probability = probability(attribute.getDomainValue(i));
+            sum = sum + (probability * log(probability,2));
+        }
+
+        return ((-1) * sum);
+
+    }
+
+    private static double probability(String domainValue){
+        return 0;
+    }
+
+    private static double log(double number, int base){
+        return(Math.log10(number)/Math.log10(base));
+    }
 }

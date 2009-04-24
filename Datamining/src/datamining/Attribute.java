@@ -57,6 +57,10 @@ public class Attribute {
     public void setIndex(int index) {
         this.index = index;
     }
+
+    public int getDomainSize(){
+        return domain.size();
+    }
     
     /**
      * Retorna o valor do dominio a partir da representacao numerica de um
