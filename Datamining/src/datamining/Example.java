@@ -47,6 +47,10 @@ public class Example {
         Attribute attr = dataBase.attribute(name);
         return attrValues.get(attr.getIndex());
     }
+    
+    public Double getClassAttrValue() {
+        return attrValues.get(dataBase.getClassIndex());
+    }
         
     public Double[] getAttrValues() {
         Double[] values = null;
@@ -57,6 +61,10 @@ public class Example {
     public void setAttrValue(int index, Double value) {
         if (index < 0 || index >= attrValues.size())
             attrValues.set(index, value);
+    }
+    
+    public void setClassAttrValue(Double value) {
+        setAttrValue(dataBase.getClassIndex(), value);
     }
     
     public int numAttributes() {

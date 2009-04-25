@@ -57,7 +57,7 @@ public class Attribute {
         this.index = index;
     }
 
-    public int getDomainSize(){
+    public int domainCardinality(){
         return domain.size();
     }
     

@@ -36,6 +36,9 @@ public class DataBase {
     private static final String[] dominioClasse =
             {"good", "bad"};
 
+    public DataBase() {
+        initDataBase();
+    }
     
     public DataBase(String fileName) throws Exception {
         initDataBase();
@@ -54,6 +57,10 @@ public class DataBase {
     
     public Example example (int index) {
         return data.get(index);
+    }
+    
+    public int numExamples() {
+        return data.size();
     }
     
     /**
@@ -95,6 +102,10 @@ public class DataBase {
         return attribute(index);
     }
     
+    public Attribute classAttribute() {
+        return attributes.get(classIndex);
+    }
+    
     public int numAttributes() {
         return attributes.size();
     }
@@ -112,6 +123,10 @@ public class DataBase {
         if (classIndex < 0 || classIndex >= attributes.size())
             throw new Exception("Atributo inexistente");
         this.classIndex = classIndex;
+    }
+    
+    public int numClasses() {
+        return attributes.get(classIndex).domainCardinality();
     }
     
     private void createDataBase (File file) throws Exception {
