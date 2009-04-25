@@ -34,6 +34,10 @@ public class DataBase {
         return data.get(index);
     }
     
+    public int getSize () {
+        return data.size();
+    }
+    
     public void createDataBase (File file) throws Exception {
     //copia e trata as entradas da base de data
         try {
