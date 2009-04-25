@@ -4,53 +4,27 @@
  */
 package datamining;
 
+import java.util.LinkedList;
+import static java.lang.Math.*;
+
 /**
  *
  * @author igor
  */
 public class Utils {
-
+    
     /**
-     * Retorna a representacao numerica de um valor de atributo nominal baseada
-     * no dominio desse atributo.
+     * Retorna uma opcao sinalizada por uma flag  no array de opcoes.
      * 
-     * @param   domain o dominio do atributo
-     * @param   value  o valor do atributo
-     * @return         a representacao numerica de value.
-     */
-    public static int attrStringToNumerical(String[] domain, String value) throws Exception {
-        int intValue = 0;
-
-        //Testa se o valor do atributo e desconhecido
-        if (value.equals("?")) {
-            intValue = -1;
-        } else {
-            while (intValue < domain.length && !domain[intValue].equals(value))
-                intValue++;
-            if (intValue >= domain.length)
-                throw new Exception("Valor " + value + " nao pertence ao dominio." );
-        }
-
-        return intValue;
-    }
-
-    /**
-     * Retorna o valor do dominio a partir da representacao numerica de um
-     * atributo nominal.
+     * @param flag    sinalizador da opcao desejada
+     * @param options array com sinalizadores e opcoes
      * 
-     * @param   domain o dominio do atributo
-     * @param   value  a representacao numerica do valor do atributo
-     * @return         o valor mapeado no dominio por value.
+     * @return o valor da opcao desejada
      */
-    public static String attrNumericalToString(String[] domain, int value) {
-        String strValue = "?";
-        if (value >= 0 && value < domain.length)
-            strValue = domain[value];
-        
-        return strValue;
-    }
-
     public static String getOption(String flag, String[] options) throws Exception {
+        if (options.length == 0) {
+            throw new Exception("Nenhuma opcao foi definida!");
+        }
         int i = 0;
         String readFlag = options[i];
 
@@ -64,4 +38,22 @@ public class Utils {
         }
         return options[i + 1];
     }
+    
+    /**
+     * Efetua o calculo da entropia de Shannon para uma colecao de
+     * probabilidades
+     * 
+     * @param probs colecao de probabilidades
+     * 
+     * @return o valor da entropia para as probabilidades passadas
+     */
+    public static Double entropy(LinkedList<Double> probs) {
+        double entropyValue = 0;
+        while (!probs.isEmpty()) {
+            double px = probs.poll().doubleValue();
+            entropyValue += (log(px)/log(2));
+        }
+        return Double.valueOf(entropyValue);
+    }
+
 }
