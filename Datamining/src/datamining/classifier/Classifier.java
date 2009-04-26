@@ -42,8 +42,8 @@ public class Classifier {
         double numAttr = trainingSet.numAttributes() - 1;
         int numClasses = trainingSet.numClasses();
         
-        // Suponho a entropia inicial a maior possivel e escolho o primeiro
-        // atributo como separador.
+        // Suponho o nivel de informacao inicial o maior possivel e escolho o
+        // primeiro atributo como separador.
         double iEntropy = 1;
         Attribute chosen = trainingSet.attribute(0);
         
@@ -64,17 +64,18 @@ public class Classifier {
             classCount[attrValue][classValue]++;
         }
         
-        LinkedList<Double> probs = new LinkedList<Double>();
+        double attrInfo = 0;
         for (int i = 0; i < classCount.length; i++) {
+            LinkedList<Double> probs = new LinkedList<Double>();
             for (int j = 0; j < numClasses; j++) {
-                double prob = classCount[i][j] / splits[i].numExamples();
+                double prob = (classCount[i][j] / splits[i].numExamples());
                 probs.add(new Double(prob));
             }
+            double vEntropy = entropy(probs);
+            attrInfo += (splits[i].numExamples() / numExamples) * vEntropy;
         }
         
-        double attrEntropy = entropy(probs);
-        
-        System.out.println(attrEntropy);
+        System.out.println(attrInfo);
         
         // Se a separacao for maior que o parametro de corte minimo
             // Compara os attributos e escolhe o que melhor separa as classes
