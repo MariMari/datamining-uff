@@ -127,7 +127,7 @@ public class DataBase {
     }
     
     public int numClasses() {
-        return attributes.get(classIndex).domainCardinality();
+        return attributes.get(classIndex).cardinality();
     }
     
     private void createDataBase (File file) throws Exception {

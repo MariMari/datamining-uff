@@ -23,6 +23,52 @@ public class Classifier {
     /** Construtor vazio */
     public Classifier() {}
     
+    private double[][] countClass(Attribute attr, DataBase db) throws Exception {
+        double[][] classCount =
+            new double[attr.cardinality()][db.numClasses()];
+        
+        for (int i = 0; i < db.numExamples(); i++) {
+            Example example = db.example(i);
+            int attrValue = example.getAttrValue(attr.getIndex()).intValue();
+            int classValue = example.getClassValue().intValue();
+            classCount[attrValue][classValue]++;
+        }
+        
+        return classCount;
+    }
+    
+    private DataBase[] createSplits(Attribute attr, DataBase db) throws Exception {
+        DataBase[] splits = new DataBase[attr.cardinality()];
+        
+        for (int i = 0; i < splits.length; i++) {
+            splits[i] = new DataBase();
+        }
+        
+        for (int i = 0; i < db.numExamples(); i++) {
+            Example example = db.example(i);
+            int attrValue = example.getAttrValue(attr.getIndex()).intValue();
+            splits[attrValue].addExample(example);
+        }
+        
+        return splits;
+    }
+    
+    private Double attributeInfo(Attribute attr, double[][] classCount) {
+        double attrInfo = 0;
+        
+        for (int i = 0; i < classCount.length; i++) {
+            LinkedList<Double> probs = new LinkedList<Double>();
+            for (int j = 0; j < classCount[].length; j++) {
+                double prob = (classCount[i][j] / splits[i].numExamples());
+                probs.add(new Double(prob));
+            }
+            double vEntropy = entropy(probs);
+            attrInfo += (splits[i].numExamples() / numExamples) * vEntropy;
+        }
+        
+        return null;
+    }
+    
     /**
      * Metodo para construir a arvore de decisao em funcao do conjunto de
      * treinamento passado como parametro.
@@ -44,36 +90,13 @@ public class Classifier {
         
         // Suponho o nivel de informacao inicial o maior possivel e escolho o
         // primeiro atributo como separador.
-        double iEntropy = 1;
+        double info = 1;
         Attribute chosen = trainingSet.attribute(0);
         
-        // Calculo a entropia para o no escolhido
-        DataBase[] splits = new DataBase[chosen.domainCardinality()];
-        for (int i = 0; i < splits.length; i++) {
-            splits[i] = new DataBase();
-        }
+        double[][] classCount = countClass(chosen, trainingSet);
         
-        double[][] classCount =
-            new double[chosen.domainCardinality()][numClasses];
+        DataBase[] splits = createSplits(chosen, trainingSet);
         
-        for (int i = 0; i < numExamples; i++) {
-            Example example = trainingSet.example(i);
-            int attrValue = example.getAttrValue(chosen.getIndex()).intValue();
-            int classValue = example.getClassValue().intValue();
-            splits[attrValue].addExample(example);
-            classCount[attrValue][classValue]++;
-        }
-        
-        double attrInfo = 0;
-        for (int i = 0; i < classCount.length; i++) {
-            LinkedList<Double> probs = new LinkedList<Double>();
-            for (int j = 0; j < numClasses; j++) {
-                double prob = (classCount[i][j] / splits[i].numExamples());
-                probs.add(new Double(prob));
-            }
-            double vEntropy = entropy(probs);
-            attrInfo += (splits[i].numExamples() / numExamples) * vEntropy;
-        }
         
         System.out.println(attrInfo);
         

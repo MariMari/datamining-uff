@@ -57,7 +57,7 @@ public class Attribute {
         this.index = index;
     }
 
-    public int domainCardinality(){
+    public int cardinality(){
         return domain.size();
     }
     
