@@ -53,20 +53,28 @@ public class Classifier {
         return splits;
     }
     
-    private Double attributeInfo(Attribute attr, double[][] classCount) {
+    private double infoAmount(double[][] classCount, double totalExamples) {
         double attrInfo = 0;
         
         for (int i = 0; i < classCount.length; i++) {
-            LinkedList<Double> probs = new LinkedList<Double>();
-            for (int j = 0; j < classCount[].length; j++) {
-                double prob = (classCount[i][j] / splits[i].numExamples());
-                probs.add(new Double(prob));
+            Double[] probs = new Double[classCount[i].length];
+            double numExamples = 0;
+            
+            for (int j = 0; j < classCount[i].length; j++) {
+                double prob = (classCount[i][j]);
+                probs[j] = new Double(prob);
+                numExamples += prob;
             }
+            
+            for (int j = 0; j < probs.length; j++) {
+                probs[j] = new Double(probs[j].doubleValue() / numExamples);
+            }
+            
             double vEntropy = entropy(probs);
-            attrInfo += (splits[i].numExamples() / numExamples) * vEntropy;
+            attrInfo += (numExamples / totalExamples) * vEntropy;
         }
         
-        return null;
+        return attrInfo;
     }
     
     /**
@@ -90,20 +98,21 @@ public class Classifier {
         
         // Suponho o nivel de informacao inicial o maior possivel e escolho o
         // primeiro atributo como separador.
-        double info = 1;
+        double currentInfo = 1;
         Attribute chosen = trainingSet.attribute(0);
         
         double[][] classCount = countClass(chosen, trainingSet);
         
         DataBase[] splits = createSplits(chosen, trainingSet);
         
+        double attrInfo = infoAmount(classCount, numExamples);
         
-        System.out.println(attrInfo);
+        // O atributo que obtiver o maior gano de informacao deve ser o escolhido.
+        // Esse teste deve ser feito para todos os atributos apesar de aqui eu
+        // so mostrar para o primeiro.
+        double infoGain = currentInfo - attrInfo;
         
-        // Se a separacao for maior que o parametro de corte minimo
-            // Compara os attributos e escolhe o que melhor separa as classes
-            // Cria um no com esse attributo
-        // Passa a analise do proximo no.    
+        // Ainda falta a comparacao com o valor de corte minimo!!!
     }
     
     /**
