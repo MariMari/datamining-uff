@@ -51,7 +51,10 @@ public class Utils {
         double entropyValue = 0;
         while (!probs.isEmpty()) {
             double px = probs.poll().doubleValue();
-            double log2 = (log(px)/log(2));
+            double log2 = 0;
+            if (px != 0) {
+                log2 = log(px) / log(2);
+            }
             entropyValue += px * log2;
         }
         return Double.valueOf(-entropyValue);

@@ -38,6 +38,7 @@ public class DataBase {
 
     public DataBase() {
         initDataBase();
+        data = new ArrayList<Example>();
     }
     
     public DataBase(String fileName) throws Exception {

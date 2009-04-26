@@ -48,7 +48,7 @@ public class Example {
         return attrValues.get(attr.getIndex());
     }
     
-    public Double getClassAttrValue() {
+    public Double getClassValue() {
         return attrValues.get(dataBase.getClassIndex());
     }
         
@@ -63,7 +63,7 @@ public class Example {
             attrValues.set(index, value);
     }
     
-    public void setClassAttrValue(Double value) {
+    public void setClassValue(Double value) {
         setAttrValue(dataBase.getClassIndex(), value);
     }
     
