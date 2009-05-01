@@ -20,8 +20,9 @@ public class Main {
      */    
     public static void main(String[] args) {
         try {
+              
             // Avaliando as opcoes passadas ao classificador
-            String trainingFileName = getOption("t", args);
+              String trainingFileName = getOption("t", args);
 //            String instanceFileName = getOption("i", args);
 //            String classFileName = getOption("c", args);
 
@@ -29,6 +30,10 @@ public class Main {
             
             Classifier classifier = new Classifier();
             classifier.buildClassifier(trainingBase);
+            for (int i=0; i<7; i++) {
+                System.out.println(trainingBase.example(i).getAttrValue(3));
+            
+            }
 
 //            String register = getParameter(classFileName);
 //            String classe = getParameter(instanceFileName);

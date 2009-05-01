@@ -13,8 +13,8 @@ import static datamining.Utils.*;
 
 /**
  *
- * @author igor
- */
+         * @author igor
+         */
 public class Classifier {
     
     private TreeNode root;
@@ -107,7 +107,7 @@ public class Classifier {
         
         double attrInfo = infoAmount(classCount, numExamples);
         
-        // O atributo que obtiver o maior gano de informacao deve ser o escolhido.
+        // O atributo que obtiver o maior ganho de informacao deve ser o escolhido.
         // Esse teste deve ser feito para todos os atributos apesar de aqui eu
         // so mostrar para o primeiro.
         double infoGain = currentInfo - attrInfo;
@@ -123,8 +123,18 @@ public class Classifier {
      * 
      * @return a classe do exemplo representada por um Double
      */
-    public Double classifyExample(Example example) {
-        return null;
+    public Double classifyExample(Example example) throws Exception {
+      
+        TreeNode nextNode;
+	TreeNode currentNode = null;
+	nextNode = this.root;
+        double aux =0;
+	while(nextNode != null)	{
+		currentNode = nextNode;
+                aux = example.getAttrValue(currentNode.getAttribute());
+		nextNode = currentNode.getChild((int) aux);
+        }
+        return (double)currentNode.getAttribute();
     }
 
 }

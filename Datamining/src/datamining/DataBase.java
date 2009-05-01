@@ -60,17 +60,11 @@ public class DataBase {
         return data.get(index);
     }
     
-//<<<<<<< HEAD:Datamining/src/datamining/DataBase.java
-//<<<<<<< HEAD:Datamining/src/datamining/DataBase.java
+
     public int getSize () {
         return data.size();
     }
-/*    
-    public void createDataBase (File file) throws Exception {
-    //copia e trata as entradas da base de data
-//=======
-//======= 
-    }*/
+
     public int numExamples() {
         return data.size();
     }
@@ -143,9 +137,9 @@ public class DataBase {
     }
     
     private void createDataBase (File file) throws Exception {
-//>>>>>>> 324ca4f64a5a3800601c2a11f66bb5557d19b32e:Datamining/src/datamining/DataBase.java
+        //copia e trata as entradas da base de data
         try {
-            BufferedReader in = new BufferedReader(new FileReader(file));
+            BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\MariMari\\datamining-uff\\testbase.txt"));
             String lineRead = null;
             data = new ArrayList<Example>();
             

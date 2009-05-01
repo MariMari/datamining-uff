@@ -27,6 +27,10 @@ public class TreeNode {
         return children.get(index);
     }
     
+    public int getAttribute () {
+        return attribute;
+    }
+    
     public void insertChild(TreeNode child) {
         if (children == null) 
             children = new ArrayList<TreeNode>();
