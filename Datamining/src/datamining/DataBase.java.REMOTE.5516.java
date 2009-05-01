@@ -60,21 +60,10 @@ public class DataBase {
         return data.get(index);
     }
     
-<<<<<<< HEAD:Datamining/src/datamining/DataBase.java
-<<<<<<< HEAD:Datamining/src/datamining/DataBase.java
-    public int getSize () {
-        return data.size();
-    }
-    
-    public void createDataBase (File file) throws Exception {
-    //copia e trata as entradas da base de data
-=======
-=======
     public int numExamples() {
         return data.size();
     }
     
->>>>>>> 2f11d4b238bcb6099ba49e4d95c074116dbfc687:Datamining/src/datamining/DataBase.java
     /**
      * Inclui o atributo attribute se esse nao existe no dominio, isso garante
      * que attributes seja um conjunto.
@@ -142,7 +131,6 @@ public class DataBase {
     }
     
     private void createDataBase (File file) throws Exception {
->>>>>>> 324ca4f64a5a3800601c2a11f66bb5557d19b32e:Datamining/src/datamining/DataBase.java
         try {
             BufferedReader in = new BufferedReader(new FileReader(file));
             String lineRead = null;

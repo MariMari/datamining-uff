@@ -4,6 +4,7 @@
  */
 
 package datamining;
+import datamining.classifier.Classifier;
 import java.io.*;
 import static datamining.Utils.*;
 /**
@@ -24,7 +25,10 @@ public class Main {
 //            String instanceFileName = getOption("i", args);
 //            String classFileName = getOption("c", args);
 
-            DataBase dataBase = new DataBase(trainingFileName);
+            DataBase trainingBase = new DataBase(trainingFileName);
+            
+            Classifier classifier = new Classifier();
+            classifier.buildClassifier(trainingBase);
 
 //            String register = getParameter(classFileName);
 //            String classe = getParameter(instanceFileName);
@@ -33,7 +37,7 @@ public class Main {
 //                                                    logo causa erro na criaçao do objeto Example!
 //                                                   */      
 //            client.toString();
-            System.out.println(dataBase.toString());
+            System.out.println(trainingBase.toString());
 
         } catch (Exception e) {
             System.out.println("O seguinte erro ocorreu: " + e.getMessage());

@@ -47,13 +47,17 @@ public class Utils {
      * 
      * @return o valor da entropia para as probabilidades passadas
      */
-    public static Double entropy(LinkedList<Double> probs) {
+    public static Double entropy(Double[] probs) {
         double entropyValue = 0;
-        while (!probs.isEmpty()) {
-            double px = probs.poll().doubleValue();
-            entropyValue += (log(px)/log(2));
+        for (int i = 0; i < probs.length; i++) {
+            double px = probs[i].doubleValue();
+            double log2 = 0;
+            if (px != 0) {
+                log2 = log(px) / log(2);
+            }
+            entropyValue += px * log2;
         }
-        return Double.valueOf(entropyValue);
+        return Double.valueOf(-entropyValue);
     }
 
 }
