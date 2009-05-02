@@ -128,13 +128,13 @@ public class Classifier {
         TreeNode nextNode;
 	TreeNode currentNode = null;
 	nextNode = this.root;
-        double aux =0;
+        int aux =0;
 	while(nextNode != null)	{
 		currentNode = nextNode;
-                aux = example.getAttrValue(currentNode.getAttribute());
-		nextNode = currentNode.getChild((int) aux);
+                aux = example.getAttrValue(currentNode.getAttribute()).intValue();
+		nextNode = currentNode.getChild(aux);
         }
-        return (double)currentNode.getAttribute();
+        return (double) currentNode.getAttribute();
     }
 
 }
