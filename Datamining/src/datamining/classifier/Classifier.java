@@ -83,35 +83,51 @@ public class Classifier {
      * 
      * @param trainingSet um conjunto com exemplos de treinamento 
      */
-    public void buildClassifier(DataBase trainingSet) throws Exception {
-        
+    public void buildClassifier(DataBase trainingSet) throws Exception {   
         // Constroi apenas para classes discretas
         if (!trainingSet.classAttribute().isDiscrete()) {
             throw new Exception("Classificador nao pode ser construido para " +
                                 "classes continuas!");
-        }
-        
+        }   
         // Declaracao de variaveis
         double numExamples = trainingSet.numExamples();
-        double numAttr = trainingSet.numAttributes() - 1;
-        int numClasses = trainingSet.numClasses();
-        
+        int numAttr = trainingSet.numAttributes() - 1;
+        int numClasses = trainingSet.numClasses();       
         // Suponho o nivel de informacao inicial o maior possivel e escolho o
         // primeiro atributo como separador.
         double currentInfo = 1;
-        Attribute chosen = trainingSet.attribute(0);
-        
+        Attribute chosen = trainingSet.attribute(numAttr);
         double[][] classCount = countClass(chosen, trainingSet);
-        
         DataBase[] splits = createSplits(chosen, trainingSet);
-        
         double attrInfo = infoAmount(classCount, numExamples);
-        
+        double higher = 0;
+        double indexHigher = 0;
         // O atributo que obtiver o maior ganho de informacao deve ser o escolhido.
         // Esse teste deve ser feito para todos os atributos apesar de aqui eu
         // so mostrar para o primeiro.
         double infoGain = currentInfo - attrInfo;
+        double interrupt = trainingSet.numExamples() * (0.3);
+        TreeNode root = new TreeNode();
+        TreeNode leaf = root;
+       /* while((trainingSet.getSize()>1)){
+            higher = 0;
+            while ((trainingSet.numExamples()> interrupt) && (numAttr>=1)) {
+                classCount = countClass(chosen, trainingSet);
+                attrInfo = infoAmount(classCount, numExamples);
+                infoGain = currentInfo - attrInfo;
+                if (infoGain > higher) {
+                   currentInfo = attrInfo;
+                   indexHigher = numAttr;
+                }
+                numAttr--;
+                chosen = trainingSet.attribute(numAttr);
+            }
+            
+        }
+        //organizar ideias. criar o root e ir expandindo os filhos, os filhos dos filhos...
+        // atentar para o corte minimo
         
+        */
         // Ainda falta a comparacao com o valor de corte minimo!!!
     }
     

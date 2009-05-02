@@ -20,6 +20,8 @@ public class TreeNode {
     private ArrayList<TreeNode> children;
     private Double classValue;
     
+    public TreeNode () {}
+    
     public TreeNode(int attribute) {
         this.attribute = attribute;
     }
