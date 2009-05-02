@@ -125,16 +125,17 @@ public class Classifier {
      */
    public Double classifyExample(Example example) throws Exception {
       
-        TreeNode nextNode;
+        TreeNode nextNode = this.root;
 	TreeNode currentNode = null;
-	nextNode = this.root;
-        int aux =0;
+        int aux = 0;
+        
 	while(nextNode != null)	{
 		currentNode = nextNode;
                 aux = example.getAttrValue(currentNode.getAttribute()).intValue();
 		nextNode = currentNode.getChild(aux);
         }
-        return (double) currentNode.getAttribute();
+        
+        return currentNode.getClassValue();
     }
 
 }
