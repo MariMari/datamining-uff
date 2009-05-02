@@ -105,14 +105,10 @@ public class Classifier {
         return attrInfo;
     }
     
-    private Attribute compareAttrOnInfo(Attribute first, Attribute second, DataBase db) {
-    
-    }
-    
     /**
      * Retorna uma arvore de decisao construida de forma recursiva
      */
-    private TreeNode buildTree(LinkedList<Attribute> attrs, DataBase split) {
+    private TreeNode buildTree(LinkedList<Attribute> attrs, DataBase split) throws Exception {
         // TODO: Implementar os condicionais para terminar a recursao
         Attribute chosen = attrs.poll();
         double[][] classCount = countClass(chosen, split);
