@@ -105,11 +105,35 @@ public class Classifier {
         return attrInfo;
     }
     
+    private Attribute compareAttrOnInfo(Attribute first, Attribute second, DataBase db) {
+    
+    }
+    
     /**
      * Retorna uma arvore de decisao construida de forma recursiva
      */
-    private TreeNode buildTree(LinkedList attrs) {
-        buildTree(attrs);
+    private TreeNode buildTree(LinkedList<Attribute> attrs, DataBase split) {
+        // TODO: Implementar os condicionais para terminar a recursao
+        Attribute chosen = attrs.poll();
+        double[][] classCount = countClass(chosen, split);
+        double chosenInfo = infoAmount(classCount, split.numExamples());
+        
+        LinkedList<Attribute> testedAttrs = new LinkedList<Attribute>();
+        
+        while (!attrs.isEmpty()) {
+            Attribute candidate = attrs.poll();
+            double[][] cClassCount = countClass(candidate, split);
+            double candidateInfo = infoAmount(cClassCount, split.numExamples());
+            if (chosenInfo > candidateInfo) {
+                testedAttrs.add(chosen);
+                chosen = candidate;
+            } else {
+                testedAttrs.add(candidate);
+            }
+        }
+        
+        // TODO: fazer a chamada recursiva com os parametros corretos
+        buildTree(attrs, split);
         return null;
     }
     
@@ -145,9 +169,17 @@ public class Classifier {
         double interrupt = trainingSet.numExamples() * (0.3);
         TreeNode leaf = root;
         
+        /* Iniciando uma lista de atributos a serem comparados. Essa lista nao 
+         possui o attributo classe. */
         LinkedList<Attribute> attrs = new LinkedList<Attribute>();
+        for (int i = 0; i < (trainingSet.numAttributes() - 1); i++) {
+            attrs.add(trainingSet.attribute(i));
+        }
         
-        this.root = buildTree(attrs);
+        /* Construindo a arvore recursivamente */
+        this.root = buildTree(attrs, trainingSet);
+        
+        
        /* while((trainingSet.getSize()>1)){
             higher = 0;
             while ((trainingSet.numExamples()> interrupt) && (numAttr>=1)) {
