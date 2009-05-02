@@ -18,6 +18,7 @@ public class TreeNode {
     private DataBase split;
     private TreeNode parent;
     private ArrayList<TreeNode> children;
+    private Double classValue;
     
     public TreeNode(int attribute) {
         this.attribute = attribute;
@@ -52,6 +53,14 @@ public class TreeNode {
     
     public void setSplit(DataBase split) {
         this.split = split;
+    }
+    
+    public Double getClassValue() {
+        return classValue;
+    }
+    
+    public void setClassValue(Double classValue) {
+        this.classValue = classValue;
     }
     
 }
