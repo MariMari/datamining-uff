@@ -23,6 +23,15 @@ public class Classifier {
     /** Construtor vazio */
     public Classifier() {}
     
+    /**
+     * Retorna a contagem de classes para uma divisao de uma base de dados
+     * em funcao do dominio de um atributo.
+     * 
+     * @param attr atributo que dividira a base
+     * @param db   base a ser dividida
+     * 
+     * @return     a contagem de classes para a divisao de db
+     */
     private double[][] countClass(Attribute attr, DataBase db) throws Exception {
         double[][] classCount =
             new double[attr.cardinality()][db.numClasses()];
@@ -37,7 +46,16 @@ public class Classifier {
         return classCount;
     }
     
-    private DataBase[] createSplits(Attribute attr, DataBase db) throws Exception {
+    /**
+     * Retorna um array de DataBases que sao as divisoes do DataBase db em
+     * relacao aos valores do dominio do atributo attr.
+     * 
+     * @param attr atributo sobre o qual a base deve ser dividida
+     * @param db   a base a ser dividida
+     * 
+     * @return     divisao da base em um array de novas bases
+     */
+    private static DataBase[] splitDataBase(Attribute attr, DataBase db) throws Exception {
         DataBase[] splits = new DataBase[attr.cardinality()];
         
         for (int i = 0; i < splits.length; i++) {
@@ -53,7 +71,17 @@ public class Classifier {
         return splits;
     }
     
-    private double infoAmount(double[][] classCount, double totalExamples) {
+    /**
+     * Retorna a quantidade de informacao de uma contagem de classes
+     * baseada em uma distribuicao proporcionada pela divisao de uma base
+     * pelo dominio de um atributo.
+     * 
+     * @param classCount    a contagem das classes
+     * @param totalExamples o total de exemplos na base original
+     * 
+     * @return              a quantidade de informacao em classCount
+     */
+    private static double infoAmount(double[][] classCount, double totalExamples) {
         double attrInfo = 0;
         
         for (int i = 0; i < classCount.length; i++) {
@@ -98,7 +126,7 @@ public class Classifier {
         double currentInfo = 1;
         Attribute chosen = trainingSet.attribute(numAttr);
         double[][] classCount = countClass(chosen, trainingSet);
-        DataBase[] splits = createSplits(chosen, trainingSet);
+        DataBase[] splits = splitDataBase(chosen, trainingSet);
         double attrInfo = infoAmount(classCount, numExamples);
         double higher = 0;
         double indexHigher = 0;
@@ -108,7 +136,7 @@ public class Classifier {
         double infoGain = currentInfo - attrInfo;
         double interrupt = trainingSet.numExamples() * (0.3);
         TreeNode root = new TreeNode();
-        TreeNode leaf = root;
+        TreeNode leaf = root;   
        /* while((trainingSet.getSize()>1)){
             higher = 0;
             while ((trainingSet.numExamples()> interrupt) && (numAttr>=1)) {
