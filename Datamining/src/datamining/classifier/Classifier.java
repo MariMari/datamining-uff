@@ -106,6 +106,14 @@ public class Classifier {
     }
     
     /**
+     * Retorna uma arvore de decisao construida de forma recursiva
+     */
+    private TreeNode buildTree(LinkedList attrs) {
+        buildTree(attrs);
+        return null;
+    }
+    
+    /**
      * Metodo para construir a arvore de decisao em funcao do conjunto de
      * treinamento passado como parametro.
      * 
@@ -135,8 +143,11 @@ public class Classifier {
         // so mostrar para o primeiro.
         double infoGain = currentInfo - attrInfo;
         double interrupt = trainingSet.numExamples() * (0.3);
-        TreeNode root = new TreeNode();
-        TreeNode leaf = root;   
+        TreeNode leaf = root;
+        
+        LinkedList<Attribute> attrs = new LinkedList<Attribute>();
+        
+        this.root = buildTree(attrs);
        /* while((trainingSet.getSize()>1)){
             higher = 0;
             while ((trainingSet.numExamples()> interrupt) && (numAttr>=1)) {
