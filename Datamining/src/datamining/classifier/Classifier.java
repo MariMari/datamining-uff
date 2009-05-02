@@ -123,7 +123,7 @@ public class Classifier {
      * 
      * @return a classe do exemplo representada por um Double
      */
-    public Double classifyExample(Example example) throws Exception {
+   public Double classifyExample(Example example) throws Exception {
       
         TreeNode nextNode;
 	TreeNode currentNode = null;

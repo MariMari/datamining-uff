@@ -43,7 +43,6 @@ public class Main {
 //                                                   */      
 //            client.toString();
             System.out.println(trainingBase.toString());
-
         } catch (Exception e) {
             System.out.println("O seguinte erro ocorreu: " + e.getMessage());
         }        
