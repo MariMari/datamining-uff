@@ -46,6 +46,21 @@ public class Classifier {
         return classCount;
     }
     
+    private double[][] countClass(DataBase db) throws Exception {
+        double[][] classCount =
+            new double[1][db.numClasses()];
+        
+        for (int i = 0; i < db.numExamples(); i++) {
+            Example example = db.example(i);
+            int classValue = example.getClassValue().intValue();
+            classCount[0][classValue]++;
+        }
+        
+        return classCount;
+    }
+    
+    
+    
     /**
      * Retorna um array de DataBases que sao as divisoes do DataBase db em
      * relacao aos valores do dominio do atributo attr.
@@ -95,7 +110,11 @@ public class Classifier {
             }
             
             for (int j = 0; j < probs.length; j++) {
-                probs[j] = new Double(probs[j].doubleValue() / numExamples);
+                if (numExamples == 0) {
+                    probs[j] = new Double(0);
+                } else {
+                    probs[j] = new Double(probs[j].doubleValue() / numExamples);
+                }
             }
             
             double vEntropy = entropy(probs);
@@ -114,34 +133,42 @@ public class Classifier {
         TreeNode node = null;
         
         if ((split.numExamples() > minimo) && (attrs.size() > 0)) {
-            // TODO: Implementar os condicionais para terminar a recursao
+            //Calculando info para o split
+            double[][] setCount = countClass(split);
+            double info = infoAmount(setCount, split.numExamples());
+            
             Attribute chosen = attrs.poll();
             double[][] count = countClass(chosen, split);
             double chosenInfo = infoAmount(count, split.numExamples());
-
-            // TODO: Testar com infoGain.
+            double gain = info - chosenInfo;
+            
             // TODO: Verificar se o atributo e discreto, tratar diferenciadamente.
             for (int i = 0; i < attrs.size(); i++) {
                 Attribute candidate = attrs.poll();
                 double[][] candidateCount = countClass(candidate, split);
                 double candidateInfo = infoAmount(candidateCount, split.numExamples());
+                double candidateGain = info - candidateInfo;
                 // Se o candidato ganhar do atual escolhido...
-                if (chosenInfo > candidateInfo) {
+                if (gain < candidateGain) {
                     attrs.add(chosen);
                     chosen = candidate;
+                    chosenInfo = candidateInfo;
+                    gain = candidateGain;
                 } else {
                     attrs.add(candidate);
                 }
             }
 
-            DataBase[] splits = splitDataBase(chosen, split);
+            if (gain > 0) {
+                DataBase[] splits = splitDataBase(chosen, split);
 
-            node = new TreeNode(chosen.getIndex());
+                node = new TreeNode(chosen.getIndex()); 
 
-            //Criar os filhos a partir do split 
-            for (int i = 0; i < splits.length; i++) {
-                node.insertChild(buildTree((LinkedList<Attribute>) attrs.clone(),
-                                            splits[i], minimo));
+                //Criar os filhos a partir do split 
+                for (int i = 0; i < splits.length; i++) {
+                    node.insertChild(buildTree((LinkedList<Attribute>) attrs.clone(),
+                                                splits[i], minimo));
+                }
             }
         }
         
@@ -162,52 +189,18 @@ public class Classifier {
         }   
         // Declaracao de variaveis
         int minExamples = (int) (trainingSet.numExamples() * eParameter);
-        int numAttr = trainingSet.numAttributes() - 1;
-        int numClasses = trainingSet.numClasses();
-        // Suponho o nivel de informacao inicial o maior possivel e escolho o
-        // primeiro atributo como separador.
-        double currentInfo = 1;
-        Attribute chosen = trainingSet.attribute(numAttr);
-        double[][] classCount = countClass(chosen, trainingSet);
-        DataBase[] splits = splitDataBase(chosen, trainingSet);
-        //double attrInfo = infoAmount(classCount, numExamples);
-        // O atributo que obtiver o maior ganho de informacao deve ser o escolhido.
-        // Esse teste deve ser feito para todos os atributos apesar de aqui eu
-        // so mostrar para o primeiro.
-        //double infoGain = currentInfo - attrInfo;
-        double interrupt = trainingSet.numExamples() * (0.3);
         
         /* Iniciando uma lista de atributos a serem comparados. Essa lista nao 
          possui o attributo classe. */
         LinkedList<Attribute> attrs = new LinkedList<Attribute>();
         for (int i = 0; i < (trainingSet.numAttributes() - 1); i++) {
-            attrs.add(trainingSet.attribute(i));
+            // TODO: remover esse if...
+            if (trainingSet.attribute(i).isDiscrete())
+                attrs.add(trainingSet.attribute(i));
         }
         
         /* Construindo a arvore recursivamente */
         this.root = buildTree(attrs, trainingSet, minExamples);
-        
-        
-       /* while((trainingSet.getSize()>1)){
-            higher = 0;
-            while ((trainingSet.numExamples()> interrupt) && (numAttr>=1)) {
-                classCount = countClass(chosen, trainingSet);
-                attrInfo = infoAmount(classCount, numExamples);
-                infoGain = currentInfo - attrInfo;
-                if (infoGain > higher) {
-                   currentInfo = attrInfo;
-                   indexHigher = numAttr;
-                }
-                numAttr--;
-                chosen = trainingSet.attribute(numAttr);
-            }
-            
-        }
-        //organizar ideias. criar o root e ir expandindo os filhos, os filhos dos filhos...
-        // atentar para o corte minimo
-        
-        */
-        // Ainda falta a comparacao com o valor de corte minimo!!!
     }
     
     /**

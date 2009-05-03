@@ -30,10 +30,6 @@ public class Main {
             
             Classifier classifier = new Classifier();
             classifier.buildClassifier(trainingBase);
-            for (int i=0; i<7; i++) {
-                System.out.println(trainingBase.example(i).getAttrValue(3));
-            
-            }
 
 //            String register = getParameter(classFileName);
 //            String classe = getParameter(instanceFileName);

@@ -139,7 +139,7 @@ public class DataBase {
     private void createDataBase (File file) throws Exception {
         //copia e trata as entradas da base de data
         try {
-            BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\MariMari\\datamining-uff\\testbase.txt"));
+            BufferedReader in = new BufferedReader(new FileReader(file));
             String lineRead = null;
             data = new ArrayList<Example>();
             
