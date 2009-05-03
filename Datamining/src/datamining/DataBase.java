@@ -136,6 +136,7 @@ public class DataBase {
         return attributes.get(classIndex).cardinality();
     }
     
+   
     private void createDataBase (File file) throws Exception {
         //copia e trata as entradas da base de data
         try {
