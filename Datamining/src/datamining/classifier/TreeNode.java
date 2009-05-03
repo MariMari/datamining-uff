@@ -15,8 +15,6 @@ import java.util.ArrayList;
 public class TreeNode {
 
     private int attribute;
-    private DataBase split;
-    private TreeNode parent;
     private ArrayList<TreeNode> children;
     private Double classValue;
     
@@ -39,22 +37,6 @@ public class TreeNode {
             children = new ArrayList<TreeNode>();
         
         children.add(child);
-    }
-    
-    public TreeNode getParent() {
-        return parent;
-    }
-    
-    public void setParent(TreeNode parent) {
-        this.parent = parent;
-    }
-    
-    public DataBase getSplit() {
-        return split;
-    }
-    
-    public void setSplit(DataBase split) {
-        this.split = split;
     }
     
     public Double getClassValue() {

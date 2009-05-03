@@ -124,6 +124,23 @@ public class Classifier {
         return attrInfo;
     }
     
+    private Double commandingClass(DataBase db) {
+        double[] classes = new double[db.numClasses()];
+        
+        for (int i = 0; i < db.numExamples(); i++) {
+            classes[db.example(i).getClassValue().intValue()]++;
+        }
+        
+        Double greater = new Double(0);
+        for (int i = 1; i < classes.length; i++) {
+            if (classes[greater.intValue()] < classes[i]) {
+                greater = new Double(i);
+            }
+        }
+        
+        return greater;
+    }
+    
     /**
      * Retorna uma arvore de decisao construida de forma recursiva
      */
@@ -162,7 +179,8 @@ public class Classifier {
             if (gain > 0) {
                 DataBase[] splits = splitDataBase(chosen, split);
 
-                node = new TreeNode(chosen.getIndex()); 
+                node = new TreeNode(chosen.getIndex());
+                node.setClassValue(commandingClass(split));
 
                 //Criar os filhos a partir do split 
                 for (int i = 0; i < splits.length; i++) {
