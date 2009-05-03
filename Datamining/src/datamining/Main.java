@@ -22,27 +22,35 @@ public class Main {
         try {
               
             // Avaliando as opcoes passadas ao classificador
-              String trainingFileName = getOption("t", args);
-//            String instanceFileName = getOption("i", args);
-//            String classFileName = getOption("c", args);
+            String trainingFileName = getOption("t", args);
+            String testFileName = getOption("T", args);
 
+            // Criando a arvore
             DataBase trainingBase = new DataBase(trainingFileName);
             
             Classifier classifier = new Classifier();
             classifier.buildClassifier(trainingBase);
-            for (int i=0; i<7; i++) {
-                System.out.println(trainingBase.example(i).getAttrValue(3));
             
+            // Classificando
+            DataBase testBase = new DataBase(testFileName);
+            DataBase resultBase = new DataBase();
+            for (int i = 0; i < testBase.numExamples(); i++) {
+                Example example = testBase.example(i);
+                Double klass = classifier.classifyExample(example);
+                
+                // Copiando o exemplo
+                Example newExample = new Example(resultBase);
+                for (int j = 0; j < testBase.numAttributes(); j++) {
+                    newExample.setAttrValue(j, example.getAttrValue(j));
+                }
+                
+                newExample.setClassValue(klass);
+                
+                resultBase.addExample(example);
             }
-
-//            String register = getParameter(classFileName);
-//            String classe = getParameter(instanceFileName);
-//            
-//            Example client = new Example (register + ",-"); /* gambiarra! A entrada nao possui classe,
-//                                                    logo causa erro na criaçao do objeto Example!
-//                                                   */      
-//            client.toString();
-            System.out.println(trainingBase.toString());
+            
+            System.out.println(testBase.toString());
+            System.out.println(resultBase.toString());
         } catch (Exception e) {
             System.out.println("O seguinte erro ocorreu: " + e.getMessage());
         }        

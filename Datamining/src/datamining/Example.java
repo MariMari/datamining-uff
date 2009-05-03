@@ -15,6 +15,13 @@ public class Example {
     
     private DataBase dataBase;
     private ArrayList<Double> attrValues;
+    
+    public Example(DataBase base) {
+        dataBase = base;
+        attrValues = new ArrayList<Double>();
+        for (int i = 0; i < dataBase.numAttributes(); i++)
+            attrValues.add(null);
+    }
         
     public Example(DataBase base, String line) throws Exception {
         dataBase = base;
