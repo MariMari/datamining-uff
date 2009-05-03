@@ -26,10 +26,9 @@ public class Utils {
             throw new Exception("Nenhuma opcao foi definida!");
         }
         int i = 0;
-        String readFlag = options[i];
+        String readFlag = "";
 
-        while ((i < options.length) && !readFlag.equals("-" + flag)) {
-            readFlag = options[i];
+        while ((i < options.length) && !(readFlag = options[i]).equals("-" + flag)) {
             i = i + 2;
         }
 
