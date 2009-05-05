@@ -69,18 +69,17 @@ public class Attribute {
      * @param  index a representacao numerica do valor do atributo.
      * @return       o valor mapeado no dominio por index.
      */
-    public String getDomainValue(Double index) throws Exception {
+    public String getDomainValue(double index) {
         String domainValue = MISSING_VALUE;
-        if (!index.isNaN()) {
+        if (index != Double.NaN) {
             if (!discrete) {
-                domainValue = index.toString();
+                domainValue = Double.toString(index);
             } else {
-                int intIndex = index.intValue();
-                if ((intIndex > -1) && (intIndex < domain.size())) {
-                    domainValue = domain.get(intIndex);
+                if ((index > -1) && (index < domain.size())) {
+                    domainValue = domain.get((int) index);
                 } else {
-                    throw new Exception("O valor nao pode ser encontrado no"
-                                        + " dominio do atributo: " + name );
+                    throw new RuntimeException("O valor nao pode ser encontrado" +
+                                          " no dominio do atributo: " + name );
                 }
             }
         }
@@ -94,15 +93,15 @@ public class Attribute {
      * @param   domainValue  o valor do atributo
      * @return               a representacao numerica de domainValue.
      */
-    public Double doubleForDomainValue(String domainValue) throws Exception {
-        Double value = Double.NaN;
+    public double doubleForDomainValue(String domainValue) {
+        double value = Double.NaN;
         if (!domainValue.equals(MISSING_VALUE)) {
             if (!discrete) {
                 value = Double.valueOf(domainValue);
             } else {
                 int intValue = domain.indexOf(domainValue);
                 if (intValue == -1) {
-                    throw new Exception("O valor " + domainValue + " nao tem"
+                    throw new RuntimeException("O valor " + domainValue + " nao tem"
                                         + " correspondente no dominio do"
                                         + " atributo: " + name);
                 }
