@@ -57,19 +57,18 @@ public class DataBase {
     }
     
     public Example example (int index) {
+        if ((index < 0) || (index >= data.size())) {
+            throw new RuntimeException("Tentativa de acesso a exemplo nao " +
+                                       "existente na base!");
+        }
+        
         return data.get(index);
     }
     
-
-    public int getSize () {
-        return data.size();
-    }
-
     public int numExamples() {
         return data.size();
     }
     
-//>>>>>>> 2f11d4b238bcb6099ba49e4d95c074116dbfc687:Datamining/src/datamining/DataBase.java
     /**
      * Inclui o atributo attribute se esse nao existe no dominio, isso garante
      * que attributes seja um conjunto.
@@ -77,8 +76,9 @@ public class DataBase {
      * @param attribute atributo a ser incluido
      */
     public void addAttribute(Attribute attribute) {
-        if (!attributes.contains(attribute))
+        if (!attributes.contains(attribute)) {
             attributes.add(attribute);
+        }
     }
     
     /**
@@ -88,9 +88,12 @@ public class DataBase {
      * 
      * @return      o atributo relativo ao indice index
      */
-    public Attribute attribute(int index) throws Exception {
-        if (index < 0 || index >= attributes.size())
-            throw new Exception("Atributo inexistente");
+    public Attribute attribute(int index) {
+        if (index < 0 || index >= attributes.size()) {
+            throw new RuntimeException("Tentativa de acesso a atributo nao " +
+                                       "existente na base!");
+        }
+        
         return attributes.get(index);
     }
     
@@ -101,11 +104,13 @@ public class DataBase {
      * 
      * @return     o atributo com nome name
      */
-    public Attribute attribute(String name) throws Exception {
+    public Attribute attribute(String name) {
         int index = attributes.indexOf(new Attribute(name, true, 0));
         if (index == -1) {
-            throw new Exception("Atributo inexistente");
+            throw new RuntimeException("Tentativa de acesso a atributo nao " +
+                                       "existente na base!");
         }
+        
         return attribute(index);
     }
     
@@ -126,9 +131,12 @@ public class DataBase {
      * 
      * @param classIndex indice do valor classe
      */
-    public void setClassIndex(int classIndex) throws Exception {
-        if (classIndex < 0 || classIndex >= attributes.size())
-            throw new Exception("Atributo inexistente");
+    public void setClassIndex(int classIndex) {
+        if (classIndex < 0 || classIndex >= attributes.size()) {
+            throw new RuntimeException("O indice referente a classe nao " +
+                                       "corresponde a um atributo da base!");
+        }
+        
         this.classIndex = classIndex;
     }
     
@@ -162,11 +170,12 @@ public class DataBase {
      * 
      * @return a representacao da base de dados em formato de leitura
      */
-    public String toDataBaseString() throws Exception {
-        String dataBase = null;
+    public String toDataBaseString() {
+        String dataBase = "";
         for (int i = 0; i < data.size(); i++) {
             dataBase = dataBase + example(i).toRegisterString() + "\n";
         }
+        
         return dataBase;
     }
     
@@ -176,6 +185,7 @@ public class DataBase {
         for (int i = 0; i < data.size(); i++) {
             dataBase = dataBase + this.example(i).toString() + "\n";
         }
+        
         return dataBase;
     }
     
@@ -187,37 +197,42 @@ public class DataBase {
         attributes = new ArrayList<Attribute>();
         
         //Criando todos os atributos para o problema de classificacao.
-        Attribute attr1 = new Attribute("saldo", true, 0);
-        for (int i = 0; i < dominioSaldo.length; i++)
-            attr1.addDomainValue(dominioSaldo[i]);
+        Attribute attr0 = new Attribute("saldo", true, 0);
+        for (int i = 0; i < dominioSaldo.length; i++) {
+            attr0.addDomainValue(dominioSaldo[i]);
+        }
             
-        Attribute attr2 = new Attribute("duracao", false, 1);
+        Attribute attr1 = new Attribute("duracao", false, 1);
         
-        Attribute attr3 = new Attribute("historico", true, 2);
-        for (int i = 0; i < dominioHistCredito.length; i++)
-            attr3.addDomainValue(dominioHistCredito[i]);
+        Attribute attr2 = new Attribute("historico", true, 2);
+        for (int i = 0; i < dominioHistCredito.length; i++) {
+            attr2.addDomainValue(dominioHistCredito[i]);
+        }
         
-        Attribute attr4 = new Attribute("valor", false, 3);
+        Attribute attr3 = new Attribute("valor", false, 3);
         
-        Attribute attr5 = new Attribute("economias", true, 4);
-        for (int i = 0; i < dominioEconomias.length; i++)
-            attr5.addDomainValue(dominioEconomias[i]);
+        Attribute attr4 = new Attribute("economias", true, 4);
+        for (int i = 0; i < dominioEconomias.length; i++) {
+            attr4.addDomainValue(dominioEconomias[i]);
+        }
         
-        Attribute attr6 = new Attribute("estado pessoal", true, 5);
-        for (int i = 0; i < dominioEstPessoal.length; i++)
-            attr6.addDomainValue(dominioEstPessoal[i]);
+        Attribute attr5 = new Attribute("estado pessoal", true, 5);
+        for (int i = 0; i < dominioEstPessoal.length; i++) {
+            attr5.addDomainValue(dominioEstPessoal[i]);
+        }
         
-        Attribute attr7 = new Attribute("classe", true, 6);
-        for (int i = 0; i < dominioClasse.length; i++)
-            attr7.addDomainValue(dominioClasse[i]);
+        Attribute attr6 = new Attribute("classe", true, 6);
+        for (int i = 0; i < dominioClasse.length; i++) {
+            attr6.addDomainValue(dominioClasse[i]);
+        }
         
+        attributes.add(attr0);
         attributes.add(attr1);
         attributes.add(attr2);
         attributes.add(attr3);
         attributes.add(attr4);
         attributes.add(attr5);
         attributes.add(attr6);
-        attributes.add(attr7);
         
         classIndex = 6;
     }
