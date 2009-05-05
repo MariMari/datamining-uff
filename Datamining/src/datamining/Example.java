@@ -7,9 +7,10 @@ package datamining;
 import java.util.ArrayList;
 
 /**
- *
+ * @author Fábio Gomes
+ * @author Gabriel Baims
  * @author Marianna Portela
- * @author igorg
+ * @author Igor Giusti
  */
 public class Example {
     
@@ -86,7 +87,7 @@ public class Example {
      */
     public String toRegisterString() throws Exception {
         String example = dataBase.attribute(0).getDomainValue(attrValues.get(0));
-        for (int i = 0; i < attrValues.size(); i++) {
+        for (int i = 1; i < attrValues.size(); i++) {
             String strAttr = dataBase.attribute(i).getDomainValue(
                                                    attrValues.get(i));
             example += ", " + strAttr;

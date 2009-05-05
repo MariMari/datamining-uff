@@ -8,9 +8,10 @@ import java.io.*;
 import java.util.ArrayList;
 
 /**
- *
- * @author MariMari
- * @author igorg
+ * @author Fábio Gomes
+ * @author Gabriel Baims
+ * @author Marianna Portela
+ * @author Igor Giusti
  */
 public class DataBase {
     
@@ -164,7 +165,7 @@ public class DataBase {
      * @return a representacao da base de dados em formato de leitura
      */
     public String toDataBaseString() throws Exception {
-        String dataBase = null;
+        String dataBase = "";
         for (int i = 0; i < data.size(); i++) {
             dataBase = dataBase + example(i).toRegisterString() + "\n";
         }
