@@ -16,7 +16,7 @@ public class TreeNode {
 
     private int attribute;
     private ArrayList<TreeNode> children;
-    private Double classValue;
+    private double classValue;
     
     public TreeNode () {}
     
@@ -43,7 +43,7 @@ public class TreeNode {
         return classValue;
     }
     
-    public void setClassValue(Double classValue) {
+    public void setClassValue(double classValue) {
         this.classValue = classValue;
     }
     

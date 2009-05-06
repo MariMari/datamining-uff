@@ -49,7 +49,8 @@ public class Example {
             
     public double getAttrValue(int index) {
         if (index < 0 || index >= attrValues.size()) {
-            throw new RuntimeException("Valor inexistente");
+            throw new RuntimeException("Valor nao pode ser recuperado, " +
+                                       "atributo inexistente!");
         }
         return attrValues.get(index).doubleValue();
     }
@@ -68,6 +69,7 @@ public class Example {
             throw new RuntimeException("O valor nao pode ser atribuido, " +
                                        "atributo inexistente!");
         }
+        
         attrValues.set(index, new Double(value));
     }
     
