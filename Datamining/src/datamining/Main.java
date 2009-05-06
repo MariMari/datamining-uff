@@ -50,8 +50,6 @@ public class Main {
                 resultBase.addExample(example);
             }
             
-            //System.out.println(testBase.toString());
-            //System.out.println(resultBase.toString());
             File file = new File("resultClassifier.txt");
             boolean ok = file.createNewFile();
             if(ok) {
@@ -60,6 +58,10 @@ public class Main {
                 writer.close();
                 
             }
+            
+            System.out.println("O resultado da classificacao esta no " +
+                               "arquivo: " + file.getAbsolutePath());
+            
         } catch (Exception e) {
             System.out.println("O seguinte erro ocorreu: " + e.getMessage());
         }        
