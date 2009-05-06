@@ -50,17 +50,19 @@ public class Main {
                 resultBase.addExample(example);
             }
             
-            File file = new File("resultClassifier.txt");
-            boolean ok = file.createNewFile();
-            if(ok) {
-            	FileWriter writer = new FileWriter(file,true);
+            File out = new File("resultClassifier.txt");
+            if (out.exists()) {
+                out.delete();
+            }
+            boolean created = out.createNewFile();
+            if (created) {
+            	FileWriter writer = new FileWriter(out,true);
                 writer.write(resultBase.toDataBaseString()); 
                 writer.close();
-                
             }
             
             System.out.println("O resultado da classificacao esta no " +
-                               "arquivo: " + file.getAbsolutePath());
+                               "arquivo: " + out.getAbsolutePath());
             
         } catch (Exception e) {
             System.out.println("O seguinte erro ocorreu: " + e.getMessage());
