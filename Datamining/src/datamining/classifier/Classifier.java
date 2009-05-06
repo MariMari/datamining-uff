@@ -7,8 +7,9 @@
 
 package datamining.classifier;
 
-import datamining.*;
 import java.util.LinkedList;
+
+import datamining.*;
 import static datamining.Utils.*;
 
 /**
@@ -18,7 +19,7 @@ import static datamining.Utils.*;
 public class Classifier {
     
     private TreeNode root;
-    double eParameter;
+    double minimum;
     
     /** Construtor vazio */
     public Classifier() {}
@@ -32,27 +33,27 @@ public class Classifier {
      * 
      * @return     a contagem de classes para a divisao de db
      */
-    private double[][] countClass(Attribute attr, DataBase db) throws Exception {
+    private double[][] countClass(Attribute attr, DataBase db) {
         double[][] classCount =
             new double[attr.cardinality()][db.numClasses()];
         
         for (int i = 0; i < db.numExamples(); i++) {
             Example example = db.example(i);
-            int attrValue = example.getAttrValue(attr.getIndex()).intValue();
-            int classValue = example.getClassValue().intValue();
+            int attrValue = (int) example.getAttrValue(attr.getIndex());
+            int classValue = (int) example.getClassValue();
             classCount[attrValue][classValue]++;
         }
         
         return classCount;
     }
     
-    private double[][] countClass(DataBase db) throws Exception {
+    private double[][] countClass(DataBase db) {
         double[][] classCount =
             new double[1][db.numClasses()];
         
         for (int i = 0; i < db.numExamples(); i++) {
             Example example = db.example(i);
-            int classValue = example.getClassValue().intValue();
+            int classValue = (int) example.getClassValue();
             classCount[0][classValue]++;
         }
         
@@ -70,7 +71,7 @@ public class Classifier {
      * 
      * @return     divisao da base em um array de novas bases
      */
-    private static DataBase[] splitDataBase(Attribute attr, DataBase db) throws Exception {
+    private static DataBase[] splitDataBase(Attribute attr, DataBase db) {
         DataBase[] splits = new DataBase[attr.cardinality()];
         
         for (int i = 0; i < splits.length; i++) {
@@ -79,7 +80,7 @@ public class Classifier {
         
         for (int i = 0; i < db.numExamples(); i++) {
             Example example = db.example(i);
-            int attrValue = example.getAttrValue(attr.getIndex()).intValue();
+            int attrValue = (int) example.getAttrValue(attr.getIndex());
             splits[attrValue].addExample(example);
         }
         
@@ -97,23 +98,22 @@ public class Classifier {
      * @return              a quantidade de informacao em classCount
      */
     private static double infoAmount(double[][] classCount, double totalExamples) {
-        double attrInfo = 0;
+        double attrInfo = 0.0;
         
         for (int i = 0; i < classCount.length; i++) {
-            Double[] probs = new Double[classCount[i].length];
-            double numExamples = 0;
+            double[] probs = new double[classCount[i].length];
+            double numExamples = 0.0;
             
             for (int j = 0; j < classCount[i].length; j++) {
-                double prob = (classCount[i][j]);
-                probs[j] = new Double(prob);
-                numExamples += prob;
+                probs[j] = classCount[i][j];
+                numExamples += probs[j];
             }
             
             for (int j = 0; j < probs.length; j++) {
                 if (numExamples == 0) {
-                    probs[j] = new Double(0);
+                    probs[j] = 0.0;
                 } else {
-                    probs[j] = new Double(probs[j].doubleValue() / numExamples);
+                    probs[j] = probs[j] / numExamples;
                 }
             }
             
@@ -124,17 +124,17 @@ public class Classifier {
         return attrInfo;
     }
     
-    private Double commandingClass(DataBase db) {
+    private double commandingClass(DataBase db) {
         double[] classes = new double[db.numClasses()];
         
         for (int i = 0; i < db.numExamples(); i++) {
-            classes[db.example(i).getClassValue().intValue()]++;
+            classes[(int) db.example(i).getClassValue()]++;
         }
         
-        Double greater = new Double(0);
+        double greater = 0.0;
         for (int i = 1; i < classes.length; i++) {
-            if (classes[greater.intValue()] < classes[i]) {
-                greater = new Double(i);
+            if (classes[(int) greater] < classes[i]) {
+                greater = i;
             }
         }
         
@@ -145,7 +145,7 @@ public class Classifier {
      * Retorna uma arvore de decisao construida de forma recursiva
      */
     private TreeNode buildTree(LinkedList<Attribute> attrs, DataBase split,
-                               int minimo) throws Exception {
+                               int minimo) {
         
         TreeNode node = null;
         
@@ -206,7 +206,7 @@ public class Classifier {
                                 "classes continuas!");
         }   
         // Declaracao de variaveis
-        int minExamples = (int) (trainingSet.numExamples() * eParameter);
+        int minExamples = (int) (trainingSet.numExamples() * minimum);
         
         /* Iniciando uma lista de atributos a serem comparados. Essa lista nao 
          possui o attributo classe. */
@@ -229,7 +229,7 @@ public class Classifier {
      * 
      * @return a classe do exemplo representada por um Double
      */
-   public Double classifyExample(Example example) throws Exception {
+   public Double classifyExample(Example example) {
       
         TreeNode nextNode = this.root;
 	TreeNode currentNode = null;
@@ -237,7 +237,7 @@ public class Classifier {
         
 	while(nextNode != null)	{
 		currentNode = nextNode;
-                aux = example.getAttrValue(currentNode.getAttribute()).intValue();
+                aux = (int) example.getAttrValue(currentNode.getAttribute());
 		nextNode = currentNode.getChild(aux);
         }
         
