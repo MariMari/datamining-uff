@@ -6,9 +6,11 @@ package datamining;
 
 import static java.lang.Math.*;
 
-/**
- *
- * @author igor
+/*/**
+ * @author Fábio Gomes
+ * @author Gabriel Baims
+ * @author Marianna Portela
+ * @author Igor Giusti
  */
 public class Utils {
     

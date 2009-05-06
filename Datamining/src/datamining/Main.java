@@ -9,9 +9,10 @@ import java.io.*;
 import static datamining.Utils.*;
 /**
  *
- * @author MariMari
- * @author igorg
- * 
+ * @author Fábio Gomes
+ * @author Gabriel Baims
+ * @author Marianna Portela
+ * @author Igor Giusti
  */
 public class Main {
 
@@ -49,8 +50,16 @@ public class Main {
                 resultBase.addExample(example);
             }
             
-            System.out.println(testBase.toString());
-            System.out.println(resultBase.toString());
+            //System.out.println(testBase.toString());
+            //System.out.println(resultBase.toString());
+            File file = new File("resultClassifier.txt");
+            boolean ok = file.createNewFile();
+            if(ok) {
+            	FileWriter writer = new FileWriter(file,true);
+                writer.write(resultBase.toDataBaseString()); 
+                writer.close();
+                
+            }
         } catch (Exception e) {
             System.out.println("O seguinte erro ocorreu: " + e.getMessage());
         }        

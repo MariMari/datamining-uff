@@ -13,8 +13,11 @@ import datamining.*;
 import static datamining.Utils.*;
 
 /**
- *
- * @author igor
+ /**
+ * @author Fábio Gomes
+ * @author Gabriel Baims
+ * @author Marianna Portela
+ * @author Igor Giusti
  */
 public class Classifier {
     

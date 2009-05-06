@@ -7,9 +7,10 @@ package datamining;
 import java.util.ArrayList;
 
 /**
- *
+ * @author Fábio Gomes
+ * @author Gabriel Baims
  * @author Marianna Portela
- * @author igorg
+ * @author Igor Giusti
  */
 public class Example {
     

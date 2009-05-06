@@ -8,9 +8,10 @@ import java.io.*;
 import java.util.ArrayList;
 
 /**
- *
- * @author MariMari
- * @author igorg
+ * @author Fábio Gomes
+ * @author Gabriel Baims
+ * @author Marianna Portela
+ * @author Igor Giusti
  */
 public class DataBase {
     

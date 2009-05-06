@@ -9,8 +9,11 @@ import datamining.DataBase;
 import java.util.ArrayList;
 
 /**
- *
- * @author igor
+ /**
+ * @author Fábio Gomes
+ * @author Gabriel Baims
+ * @author Marianna Portela
+ * @author Igor Giusti
  */
 public class TreeNode {
 
