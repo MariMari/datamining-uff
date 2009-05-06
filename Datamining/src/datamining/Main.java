@@ -47,7 +47,7 @@ public class Main {
                 
                 newExample.setClassValue(klass);
                 
-                resultBase.addExample(example);
+                resultBase.addExample(newExample);
             }
             
             File out = new File("resultClassifier.txt");
