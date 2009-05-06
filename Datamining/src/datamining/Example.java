@@ -92,7 +92,7 @@ public class Example {
         Attribute attr = dataBase.attribute(0);
         String example = attr.getDomainValue(attrValues.get(0));
         
-        for (int i = 0; i < attrValues.size(); i++) {
+        for (int i = 1; i < attrValues.size(); i++) {
             attr = dataBase.attribute(i);
             String strAttr = attr.getDomainValue(attrValues.get(i));
             example += ", " + strAttr;
