@@ -1,5 +1,7 @@
 #Build
 Datamining/dist/*
 Datamining/build/*
-Datamining/nbproject/private/*
+Datamining/.classpath
+Datamining/.project
 Datamining/resultClassifier.txt
+

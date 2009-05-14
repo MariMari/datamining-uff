@@ -187,7 +187,7 @@ public class Classifier {
 
                 //Criar os filhos a partir do split 
                 for (int i = 0; i < splits.length; i++) {
-                    node.insertChild(buildTree((LinkedList<Attribute>) attrs.clone(),
+					node.insertChild(buildTree((LinkedList<Attribute>) attrs.clone(),
                                                 splits[i], minimo));
                 }
             }

@@ -5,7 +5,6 @@
 
 package datamining.classifier;
 
-import datamining.DataBase;
 import java.util.ArrayList;
 
 /**
